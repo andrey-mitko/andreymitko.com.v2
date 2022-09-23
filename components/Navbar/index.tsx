@@ -4,7 +4,7 @@ import { Title } from "./styles";
 type Props = {};
 
 const Navbar = (props: Props) => {
-  return <Title>Navbar</Title>;
+  return <Title>Andrey Mitko</Title>;
 };
 
 export default Navbar;
