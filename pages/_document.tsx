@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Favicon from "../components/Favicon";
 
 export default function Document() {
   return (
@@ -10,6 +11,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <Favicon />
       </Head>
       <body>
         <Main />
