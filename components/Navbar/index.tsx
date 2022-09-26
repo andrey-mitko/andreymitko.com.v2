@@ -1,10 +1,28 @@
-import React from "react";
-import { Title } from "./styles";
+import React, { useState } from "react";
+import { NavWrapper, Title, MobileMenu } from "./styles";
+import { Slant as Hamburger } from "hamburger-react";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
-  return <Title>Andrey Mitko</Title>;
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  return (
+    <NavWrapper>
+      <Title className="noselect">Andrey Mitko</Title>
+      <MobileMenu>
+        <Hamburger
+          distance="sm"
+          duration={0.3}
+          size={24}
+          toggled={isMobileMenuOpen}
+          toggle={setIsMobileMenuOpen}
+          color={
+            isMobileMenuOpen ? "var(--color-purple)" : "var(--color-black100)"
+          }
+        />
+      </MobileMenu>
+    </NavWrapper>
+  );
 };
 
 export default Navbar;
