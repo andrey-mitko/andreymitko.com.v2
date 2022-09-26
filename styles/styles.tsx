@@ -12,11 +12,10 @@ export const GlobalStyle = createGlobalStyle`
                                     supported by Chrome, Edge, Opera and Firefox */
     }
 
-
     :root {
         /* Fonts */
-        --font-lato: 'Lato', sans-serif;
-        --font-lora: 'Lora', serif;
+        --font-lato: Lato, sans-serif;
+        --font-lora: Lora, serif;
 
         /* Colors */
         --color-black100: #333C48;
