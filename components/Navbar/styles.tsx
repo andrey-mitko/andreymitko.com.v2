@@ -17,8 +17,3 @@ export const Title = styled.h1`
   cursor: pointer;
 `;
 
-export const MobileMenu = styled.nav`
-  .hamburger-react div {
-    height: 2.5px !important;
-  }
-`;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavWrapper, Title, MobileMenu } from "./styles";
+import { NavWrapper, Title } from "./styles";
 import { Slant as Hamburger } from "hamburger-react";
 
 type Props = {};
@@ -9,7 +9,7 @@ const Navbar = (props: Props) => {
   return (
     <NavWrapper>
       <Title className="noselect">Andrey Mitko</Title>
-      <MobileMenu>
+      <nav>
         <Hamburger
           distance="sm"
           duration={0.3}
@@ -20,7 +20,7 @@ const Navbar = (props: Props) => {
             isMobileMenuOpen ? "var(--color-purple)" : "var(--color-black100)"
           }
         />
-      </MobileMenu>
+      </nav>
     </NavWrapper>
   );
 };
