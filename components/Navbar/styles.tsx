@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const NavWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
   padding: 24px;
-  margin-top: 40px;
 `;
 
 export const Title = styled.h1`
@@ -16,4 +19,3 @@ export const Title = styled.h1`
   font-size: 20px;
   cursor: pointer;
 `;
-

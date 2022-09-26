@@ -9,7 +9,7 @@ const Navbar = (props: Props) => {
   return (
     <NavWrapper>
       <Title className="noselect">Andrey Mitko</Title>
-      <nav>
+      <nav className="nofocus">
         <Hamburger
           distance="sm"
           duration={0.3}

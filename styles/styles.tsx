@@ -11,6 +11,17 @@ export const GlobalStyle = createGlobalStyle`
                                     supported by Chrome, Edge, Opera and Firefox */
     }
 
+    .nofocus {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent !important;
+    }
+
     :root {
         /* Fonts */
         --font-lato: Lato, sans-serif;
@@ -39,6 +50,10 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: var(--font-lato);
+        color: var(--color-black100);
     }
-    
+`;
+
+export const Section = styled.div`
+  padding: 0 24px 0 24px;
 `;
