@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { NavWrapper, Title } from "./styles";
 import { Slant as Hamburger } from "hamburger-react";
 
-type Props = {};
+type Props = {
+  bgColor: string ;
+};
 
 const Navbar = (props: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <NavWrapper>
+    <NavWrapper color={props.bgColor}>
       <Title className="noselect">Andrey Mitko</Title>
       <nav className="nofocus">
         <Hamburger

@@ -11,7 +11,7 @@ import {
 
 type Props = {};
 
-const HeroSection = (props: Props) => {
+const HeroSection = (props: Props, ref: any) => {
   return (
     <>
       <HeroWrapper>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const NavWrapper = styled.div`
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
@@ -8,7 +9,8 @@ export const NavWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: ${(props: any) =>
+    props.color ? `var(--color-${props.color})` : "red"};
   padding: 24px;
 `;
 

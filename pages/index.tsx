@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
@@ -9,6 +10,13 @@ import AboutSection from "../components/AboutSection";
 
 const Home: NextPage = () => {
   const [hasMounted, setHasMounted] = useState(false);
+  const [heroSectionRef, heroSectionInView] = useInView({
+    rootMargin: "-100px",
+  });
+  const [aboutSectionRef, aboutSectionInView] = useInView({
+    rootMargin: "-100px",
+  });
+
   useEffect(() => {
     setHasMounted(true);
   }, []);
@@ -26,9 +34,22 @@ const Home: NextPage = () => {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Navbar />
+        <Navbar
+          bgColor={
+            heroSectionInView
+              ? "white"
+              : aboutSectionInView
+              ? "lightblue"
+              : "white"
+          }
+        />
         <main>
-          <HeroSection />
+          <div ref={heroSectionRef}>
+            <HeroSection />
+          </div>
+          <div ref={aboutSectionRef}>
+            <AboutSection />
+          </div>
           <AboutSection />
         </main>
 
