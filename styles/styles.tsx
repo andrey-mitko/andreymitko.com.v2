@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-    
     :root {
         /* Fonts */
         --font-lato: Lato, sans-serif;
