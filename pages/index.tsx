@@ -2,8 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import HeroSection from "../components/HeroSection";
+
 import Navbar from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
+import AboutSection from "../components/AboutSection";
 
 const Home: NextPage = () => {
   const [hasMounted, setHasMounted] = useState(false);
@@ -27,9 +29,10 @@ const Home: NextPage = () => {
         <Navbar />
         <main>
           <HeroSection />
+          <AboutSection />
         </main>
 
-        <footer>
+        {/* <footer>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             target="_blank"
@@ -45,7 +48,7 @@ const Home: NextPage = () => {
               />
             </span>
           </a>
-        </footer>
+        </footer> */}
       </div>
     );
   }

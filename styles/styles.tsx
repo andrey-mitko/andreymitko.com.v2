@@ -30,6 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-family: var(--font-lato);
         color: var(--color-black100);
+        font-size: 20px;
     }
 
     .noselect {
@@ -56,4 +57,23 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Section = styled.div`
   padding: 0 24px 0 24px;
+`;
+
+export const SectionTitle = styled.h2`
+  font-family: var(--font-lora);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+
+  ::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 5px;
+    border-radius: 2.5px;
+    // ts-ignore
+    background-color: ${(props: any) =>
+      props.color ? `var(--color-${props.color})` : "var(--color-blue)"};
+    margin-top: 16px;
+  }
 `;
