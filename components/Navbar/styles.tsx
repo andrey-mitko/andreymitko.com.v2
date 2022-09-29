@@ -12,6 +12,7 @@ export const NavWrapper = styled.div`
   background-color: ${(props: any) =>
     props.color ? `var(--color-${props.color})` : "red"};
   padding: 24px;
+  transition: background-color 0.2s ease-in-out;
 `;
 
 export const Title = styled.h1`

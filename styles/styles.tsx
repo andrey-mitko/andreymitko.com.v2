@@ -34,6 +34,13 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 20px;
     }
 
+    h1,h2,h3,h4,h5,h6, p {
+      font-weight: normal;
+      font-style: normal;
+      font-size: 1em;
+      margin: 0;
+    }
+
     .noselect {
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */

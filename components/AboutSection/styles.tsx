@@ -7,15 +7,17 @@ export const AboutWrapper = styled(Section)`
   background-color: var(--color-lightblue);
 `;
 
-export const FeatureText = styled.p`
+export const FeatureText = styled.h4`
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.5;
   margin-top: 28px;
+  margin-bottom: 0px;
   color: var(--color-black100);
 `;
 
 export const AboutText = styled.p`
+  margin-top: 52px;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
@@ -23,7 +25,7 @@ export const AboutText = styled.p`
 `;
 
 export const FeaturesWrapper = styled.div`
-  margin-top: 20px;
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

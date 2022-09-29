@@ -7,14 +7,21 @@ import { useInView } from "react-intersection-observer";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
+import ExperienceSection from "../components/ExperienceSection";
 
 const Home: NextPage = () => {
   const [hasMounted, setHasMounted] = useState(false);
+
+  const navBarHeight = "-100px";
+
   const [heroSectionRef, heroSectionInView] = useInView({
-    rootMargin: "-100px",
+    rootMargin: navBarHeight,
   });
   const [aboutSectionRef, aboutSectionInView] = useInView({
-    rootMargin: "-100px",
+    rootMargin: navBarHeight,
+  });
+  const [experienceSectionRef, experienceSectionInView] = useInView({
+    rootMargin: navBarHeight,
   });
 
   useEffect(() => {
@@ -40,6 +47,8 @@ const Home: NextPage = () => {
               ? "white"
               : aboutSectionInView
               ? "lightblue"
+              : experienceSectionInView
+              ? "lightpink"
               : "white"
           }
         />
@@ -50,7 +59,9 @@ const Home: NextPage = () => {
           <div ref={aboutSectionRef}>
             <AboutSection />
           </div>
-          <AboutSection />
+          <div ref={experienceSectionRef}>
+            <ExperienceSection />
+          </div>
         </main>
 
         {/* <footer>
