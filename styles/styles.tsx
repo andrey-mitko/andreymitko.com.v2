@@ -34,12 +34,18 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 20px;
     }
 
-    h1,h2,h3,h4,h5,h6, p {
+    h1,h2,h3,h4,h5,h6,p,a,button {
+      color: unset;
       font-weight: normal;
       font-style: normal;
       font-size: 1em;
       margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      text-decoration: none;
     }
+    a:link,a:visited,a:hover,a:active { text-decoration: none; }
 
     .noselect {
         -webkit-touch-callout: none; /* iOS Safari */

@@ -12,7 +12,7 @@ export const HeroText = styled.h1`
   font-family: var(--font-lora);
   font-size: 37px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.25;
 `;
 
 export const BlueText = styled.span`

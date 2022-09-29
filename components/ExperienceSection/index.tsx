@@ -1,5 +1,12 @@
 import React from "react";
-import { ExperienceWrapper, ContentWrapper } from "./styles";
+import {
+  ExperienceWrapper,
+  ContentWrapper,
+  MoreInfoWrapper,
+  StyledLink,
+  OpenToWorkText,
+  StyledArrowRight,
+} from "./styles";
 import { SectionTitle } from "../../styles/styles";
 import ExperienceCell from "./ExperienceCell";
 import { Experience } from "../../types";
@@ -30,11 +37,17 @@ const ExperienceSection = (props: Props) => {
     <ExperienceWrapper>
       <SectionTitle color="pink">Experience</SectionTitle>
       <ContentWrapper>
-        <div>
-          {experiences.map((experience, index) => {
-            return <ExperienceCell key={index} experience={experience} />;
-          })}
-        </div>
+        {experiences.map((experience, index) => {
+          return <ExperienceCell key={index} experience={experience} />;
+        })}
+
+        <MoreInfoWrapper>
+          <OpenToWorkText>✧&nbsp;&nbsp;Open for Work </OpenToWorkText>
+          <StyledLink href="/resume.pdf" target="_blank">
+            EXPLORE FULL CV{" "}
+            <StyledArrowRight className="ri-arrow-right-line"></StyledArrowRight>
+          </StyledLink>
+        </MoreInfoWrapper>
       </ContentWrapper>
     </ExperienceWrapper>
   );
