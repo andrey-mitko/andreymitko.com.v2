@@ -16,7 +16,7 @@ export const ContentWrapper = styled.div`
 
   /* Space Between Flex Items */
   > :not(:first-child) {
-    margin-top: 32px;
+    margin-top: 40px;
   }
 `;
 

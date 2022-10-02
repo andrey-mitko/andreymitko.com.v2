@@ -42,7 +42,7 @@ export const PeriodText = styled.p`
 `;
 
 export const Divider = styled.div`
-  margin-top: 32px;
+  margin-top: 40px;
   height: 1px;
   width: 100%;
   background-color: var(--color-black70);
