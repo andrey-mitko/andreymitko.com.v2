@@ -3,13 +3,12 @@ import {
   ExperienceWrapper,
   ContentWrapper,
   MoreInfoWrapper,
-  StyledLink,
   OpenToWorkText,
-  StyledArrowRight,
 } from "./styles";
 import { SectionTitle } from "../../styles/styles";
 import ExperienceCell from "./ExperienceCell";
 import { Experience } from "../../types";
+import StyledLink from "../StyledLink";
 
 type Props = {};
 
@@ -42,11 +41,8 @@ const ExperienceSection = (props: Props) => {
         })}
 
         <MoreInfoWrapper>
-          <OpenToWorkText>✧&nbsp;&nbsp;Open for Work </OpenToWorkText>
-          <StyledLink href="/resume.pdf" target="_blank">
-            EXPLORE FULL CV{" "}
-            <StyledArrowRight className="ri-arrow-right-line"></StyledArrowRight>
-          </StyledLink>
+          <OpenToWorkText>● &nbsp;&nbsp;Open for Work </OpenToWorkText>
+          <StyledLink href="/resume.pdf" title="EXPLORE FULL CV" />
         </MoreInfoWrapper>
       </ContentWrapper>
     </ExperienceWrapper>

@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -8,6 +7,7 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import ExperienceSection from "../components/ExperienceSection";
+import PortfolioSection from "../components/PortfolioSection";
 
 const Home: NextPage = () => {
   const [hasMounted, setHasMounted] = useState(false);
@@ -21,6 +21,9 @@ const Home: NextPage = () => {
     rootMargin: navBarHeight,
   });
   const [experienceSectionRef, experienceSectionInView] = useInView({
+    rootMargin: navBarHeight,
+  });
+  const [portfolioSectionRef, portfolioSectionInView] = useInView({
     rootMargin: navBarHeight,
   });
 
@@ -49,6 +52,8 @@ const Home: NextPage = () => {
               ? "lightblue"
               : experienceSectionInView
               ? "lightpink"
+              : portfolioSectionInView
+              ? "lightgreen"
               : "white"
           }
         />
@@ -61,6 +66,9 @@ const Home: NextPage = () => {
           </div>
           <div ref={experienceSectionRef}>
             <ExperienceSection />
+          </div>
+          <div ref={portfolioSectionRef}>
+            <PortfolioSection />
           </div>
         </main>
 
