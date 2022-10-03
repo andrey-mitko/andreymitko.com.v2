@@ -41,7 +41,7 @@ const ExperienceSection = (props: Props) => {
         })}
 
         <MoreInfoWrapper>
-          <OpenToWorkText>● &nbsp;&nbsp;Open for Work </OpenToWorkText>
+          <OpenToWorkText>Open for Work </OpenToWorkText>
           <StyledLink href="/resume.pdf" title="EXPLORE FULL CV" />
         </MoreInfoWrapper>
       </ContentWrapper>

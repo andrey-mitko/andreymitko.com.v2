@@ -18,7 +18,7 @@ const PortfolioProjectCell = (props: Props) => {
   return (
     <CellWrapper>
       <StyledImage
-        src={props.project.image}
+        src={`/portfolio/${props.project.image}`}
         alt={props.project.title}
         layout="responsive"
         width={100}

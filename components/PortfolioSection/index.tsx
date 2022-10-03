@@ -12,31 +12,31 @@ const PortfolioSection = (props: Props) => {
     {
       title: "Tabager — Manage Web Tabs",
       subtitle: "Product Design, Web Development",
-      image: "/tabager.png",
+      image: "tabager.png",
       url: "https://www.tabager.com",
     },
     {
       title: "Joe’s Portfolio Website",
       subtitle: "Web Development",
-      image: "/joepeshall.png",
+      image: "joepeshall.png",
       url: "https://www.joepeshall.co.uk",
     },
     {
       title: "Drift — Focus & Meditation",
       subtitle: "Mobile Development",
-      image: "/drift.png",
+      image: "drift.png",
       url: "https://apps.apple.com/us/app/drift-focus-meditation/id1620172749",
     },
     {
       title: "Spring — Full Service Studio",
       subtitle: "Web Development",
-      image: "/byspring.png",
+      image: "byspring.png",
       url: "https://www.byspring.co",
     },
     {
       title: "Zonlo — Internships Across UK",
       subtitle: "Product Design, Web Development",
-      image: "/zonlo.png",
+      image: "zonlo.png",
       url: "https://www.zonlo.co.uk",
     },
   ];
