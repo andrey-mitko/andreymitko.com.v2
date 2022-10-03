@@ -1,6 +1,14 @@
 import React, { useState } from "react";
-import { NavWrapper, Title, MobileMenu } from "./styles";
+import {
+  NavWrapper,
+  Title,
+  MobileMenu,
+  MobileMenuLinksWrapper,
+  MobileMenuLink,
+  ThankYouText,
+} from "./styles";
 import { Slant as Hamburger } from "hamburger-react";
+import { NavItem } from "../../types";
 
 type Props = {
   bgColor: string;
@@ -8,6 +16,27 @@ type Props = {
 
 const Navbar = (props: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // MARK: - Navigation Data
+  const navigationItems: NavItem[] = [
+    {
+      title: "About",
+      url: "/#about",
+    },
+    {
+      title: "Experience",
+      url: "/#experience",
+    },
+    {
+      title: "Portfolio",
+      url: "/#portfolio",
+    },
+    {
+      title: "Contact",
+      url: "/#contact",
+    },
+  ];
+
   return (
     <>
       <NavWrapper color={isMobileMenuOpen ? "lightpurple" : props.bgColor}>
@@ -28,7 +57,15 @@ const Navbar = (props: Props) => {
           {/* Laptop Menu Goes Here */}
         </nav>
       </NavWrapper>
-      <MobileMenu $isMobileMenuOpen={isMobileMenuOpen}></MobileMenu>
+      <MobileMenu $isMobileMenuOpen={isMobileMenuOpen}>
+        <MobileMenuLinksWrapper>
+          {navigationItems.map((item, index) => (
+            <MobileMenuLink key={index}> {item.title} </MobileMenuLink>
+          ))}
+        </MobileMenuLinksWrapper>
+
+        <ThankYouText>Thank you for visiting my website!</ThankYouText>
+      </MobileMenu>
     </>
   );
 };

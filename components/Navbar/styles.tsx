@@ -28,9 +28,41 @@ export const MobileMenu = styled.div<MobileMenuProps>`
   height: 100%;
   background-color: var(--color-lightpurple);
   transition: ${navbarTransitions};
-  pointer-events: none;
+  pointer-events: ${(props: MobileMenuProps) =>
+    props.$isMobileMenuOpen === true ? "all" : "none"};
   opacity: ${(props: MobileMenuProps) =>
     props.$isMobileMenuOpen === true ? 1 : 0};
+`;
+
+export const MobileMenuLinksWrapper = styled.div`
+  margin: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 172px;
+
+  /* Space Between Flex Items */
+  > :not(:first-child) {
+    margin-top: 48px;
+  }
+`;
+
+export const ThankYouText = styled.p`
+  position: fixed;
+  bottom: 56px;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  color: var(--color-purple);
+  opacity: 0.7;
+`;
+
+export const MobileMenuLink = styled.a`
+  font-size: 32px;
+  font-weight: 500;
+  font-family: var(--font-lora);
+  color: var(--color-purple);
 `;
 
 type TitleProps = {

@@ -10,3 +10,8 @@ export interface PortfolioProject {
   image: string;
   url: string;
 }
+
+export interface NavItem {
+  title: string;
+  url: string;
+}
