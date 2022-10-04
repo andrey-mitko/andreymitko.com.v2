@@ -3,6 +3,11 @@ import { PortfolioWrapper, ContentWrapper } from "./styles";
 import { SectionTitle } from "../../styles/styles";
 import { PortfolioProject } from "../../types";
 import PortfolioProjectCell from "./PortfolioProjectCell";
+import TabagerImage from "../../public/portfolio/tabager.png";
+import JoePeshallImage from "../../public/portfolio/joepeshall.png";
+import DriftImage from "../../public/portfolio/drift.png";
+import SpringImage from "../../public/portfolio/byspring.png";
+import ZonloImage from "../../public/portfolio/zonlo.png";
 
 type Props = {};
 
@@ -12,31 +17,31 @@ const PortfolioSection = (props: Props) => {
     {
       title: "Tabager — Manage Web Tabs",
       subtitle: "Product Design, Web Development",
-      image: "tabager.png",
+      image: TabagerImage,
       url: "https://www.tabager.com",
     },
     {
       title: "Joe’s Portfolio Website",
       subtitle: "Web Development",
-      image: "joepeshall.png",
+      image: JoePeshallImage,
       url: "https://www.joepeshall.co.uk",
     },
     {
       title: "Drift — Focus & Meditation",
       subtitle: "Mobile Development",
-      image: "drift.png",
+      image: DriftImage,
       url: "https://apps.apple.com/us/app/drift-focus-meditation/id1620172749",
     },
     {
       title: "Spring — Full Service Studio",
       subtitle: "Web Development",
-      image: "byspring.png",
+      image: SpringImage,
       url: "https://www.byspring.co",
     },
     {
       title: "Zonlo — Internships Across UK",
       subtitle: "Product Design, Web Development",
-      image: "zonlo.png",
+      image: ZonloImage,
       url: "https://www.zonlo.co.uk",
     },
   ];

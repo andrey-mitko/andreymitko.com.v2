@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export interface Experience {
   title: string;
   company: string;
@@ -7,7 +9,7 @@ export interface Experience {
 export interface PortfolioProject {
   title: string;
   subtitle: string;
-  image: string;
+  image: StaticImageData;
   url: string;
 }
 

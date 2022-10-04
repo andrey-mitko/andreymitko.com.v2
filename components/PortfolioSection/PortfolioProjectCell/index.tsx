@@ -22,7 +22,8 @@ const PortfolioProjectCell = (props: Props) => {
   return (
     <CellWrapper onClick={() => openLink(props.project.url)}>
       <StyledImage
-        src={`/portfolio/${props.project.image}`}
+        placeholder="blur"
+        src={props.project.image}
         alt={props.project.title}
         layout="responsive"
         width={100}
@@ -30,6 +31,7 @@ const PortfolioProjectCell = (props: Props) => {
       />
       <ContentWrapper>
         <TitleText>{props.project.title}</TitleText>
+        {/* Might be added Later if neccesary */}
         {/* <SubtitleText>{props.project.subtitle}</SubtitleText> */}
         <LinkWrapper>
           <StyledLink
@@ -44,13 +46,6 @@ const PortfolioProjectCell = (props: Props) => {
       </ContentWrapper>
     </CellWrapper>
   );
-
-  // CellWrapper
-  // Image
-  // ContentWrapper
-  // TitleText
-  // SubtitleText
-  // LinkWrapper
 };
 
 export default PortfolioProjectCell;
