@@ -6,7 +6,7 @@ export const CellWrapper = styled.div`
 `;
 
 export const StyledImage = styled(Image)`
-  border-radius: 16px;
+  border-radius: 8px;
 `;
 
 export const ContentWrapper = styled.div`
@@ -22,12 +22,13 @@ export const TitleText = styled.h5`
 export const SubtitleText = styled.p`
   margin-top: 16px;
   line-height: 1.2;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-black70);
+  font-size: 20px;
 `;
 
 export const LinkWrapper = styled.div`
-  margin-top: 24px;
+  margin-top: 20px;
 
   > * {
     width: fit-content;

@@ -29,6 +29,7 @@ export const CompanyPeriodWrapper = styled.div`
 export const TitleText = styled.h5`
   font-weight: 600;
   line-height: 1.2;
+  font-size: 20px;
 `;
 
 export const CompanyText = styled.p`

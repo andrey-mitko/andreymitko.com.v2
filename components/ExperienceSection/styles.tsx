@@ -22,7 +22,7 @@ export const ContentWrapper = styled.div`
 
 export const MoreInfoWrapper = styled.div`
   line-height: 1.2;
-  font-size: 16px;
+  font-size: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;

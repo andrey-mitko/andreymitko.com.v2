@@ -60,7 +60,7 @@ export const ThankYouText = styled.p`
 
 export const MobileMenuLink = styled.a`
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 600;
   font-family: var(--font-lora);
   color: var(--color-purple);
 `;

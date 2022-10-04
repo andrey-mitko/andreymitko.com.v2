@@ -14,9 +14,13 @@ type Props = {
   project: PortfolioProject;
 };
 
+const openLink = (url: string) => {
+  window.open(url, "_blank");
+};
+
 const PortfolioProjectCell = (props: Props) => {
   return (
-    <CellWrapper>
+    <CellWrapper onClick={() => openLink(props.project.url)}>
       <StyledImage
         src={`/portfolio/${props.project.image}`}
         alt={props.project.title}
@@ -26,7 +30,7 @@ const PortfolioProjectCell = (props: Props) => {
       />
       <ContentWrapper>
         <TitleText>{props.project.title}</TitleText>
-        <SubtitleText>{props.project.subtitle}</SubtitleText>
+        {/* <SubtitleText>{props.project.subtitle}</SubtitleText> */}
         <LinkWrapper>
           <StyledLink
             href={props.project.url}
