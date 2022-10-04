@@ -69,7 +69,7 @@ type TitleProps = {
   $isMobileMenuOpen: boolean;
 };
 
-export const Title = styled.h1<TitleProps>`
+export const Title = styled.a<TitleProps>`
   z-index: 3;
   color: ${(props: MobileMenuProps) =>
     props.$isMobileMenuOpen === true

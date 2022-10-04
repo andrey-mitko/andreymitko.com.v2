@@ -17,3 +17,9 @@ export interface NavItem {
   title: string;
   url: string;
 }
+
+export interface SocialMediaItem {
+  iconClass: string;
+  url: string;
+  color: string;
+}

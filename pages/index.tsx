@@ -8,6 +8,7 @@ import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import ExperienceSection from "../components/ExperienceSection";
 import PortfolioSection from "../components/PortfolioSection";
+import FooterSection from "../components/FooterSection";
 
 const Home: NextPage = () => {
   const [hasMounted, setHasMounted] = useState(false);
@@ -24,6 +25,9 @@ const Home: NextPage = () => {
     rootMargin: navBarHeight,
   });
   const [portfolioSectionRef, portfolioSectionInView] = useInView({
+    rootMargin: navBarHeight,
+  });
+  const [footerSectionRef, footerSectionInView] = useInView({
     rootMargin: navBarHeight,
   });
 
@@ -54,6 +58,8 @@ const Home: NextPage = () => {
               ? "lightpink"
               : portfolioSectionInView
               ? "lightgreen"
+              : footerSectionInView
+              ? "white"
               : "white"
           }
         />
@@ -61,34 +67,19 @@ const Home: NextPage = () => {
           <div ref={heroSectionRef}>
             <HeroSection />
           </div>
-          <div ref={aboutSectionRef}>
+          <div id="about" ref={aboutSectionRef}>
             <AboutSection />
           </div>
-          <div ref={experienceSectionRef}>
+          <div id="experience" ref={experienceSectionRef}>
             <ExperienceSection />
           </div>
-          <div ref={portfolioSectionRef}>
+          <div id="portfolio" ref={portfolioSectionRef}>
             <PortfolioSection />
           </div>
         </main>
-
-        {/* <footer>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{" "}
-            <span>
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                width={72}
-                height={16}
-              />
-            </span>
-          </a>
-        </footer> */}
+        <div id="contact" ref={footerSectionRef}>
+          <FooterSection />
+        </div>
       </div>
     );
   }

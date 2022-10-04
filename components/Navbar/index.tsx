@@ -40,7 +40,11 @@ const Navbar = (props: Props) => {
   return (
     <>
       <NavWrapper color={isMobileMenuOpen ? "lightpurple" : props.bgColor}>
-        <Title $isMobileMenuOpen={isMobileMenuOpen} className="noselect">
+        <Title
+          href="/#"
+          $isMobileMenuOpen={isMobileMenuOpen}
+          className="noselect"
+        >
           Andrey Mitko
         </Title>
         <nav className="nofocus">
@@ -60,7 +64,14 @@ const Navbar = (props: Props) => {
       <MobileMenu $isMobileMenuOpen={isMobileMenuOpen}>
         <MobileMenuLinksWrapper>
           {navigationItems.map((item, index) => (
-            <MobileMenuLink key={index}> {item.title} </MobileMenuLink>
+            <MobileMenuLink
+              onClick={() => setIsMobileMenuOpen(false)}
+              key={index}
+              href={item.url}
+            >
+              {" "}
+              {item.title}{" "}
+            </MobileMenuLink>
           ))}
         </MobileMenuLinksWrapper>
 
