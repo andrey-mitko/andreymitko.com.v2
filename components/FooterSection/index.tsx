@@ -2,10 +2,12 @@ import React from "react";
 import {
   FooterWrapper,
   FooterTitle,
+  ContactFromWrapper,
   SocialMediaWrapper,
   SocialMediaIcon,
 } from "./styles";
 import { SocialMediaItem } from "../../types";
+import ContactForm from "../ContactForm";
 
 type Props = {};
 
@@ -42,6 +44,9 @@ const FooterSection = (props: Props) => {
   return (
     <FooterWrapper>
       <FooterTitle>Let’s work together.</FooterTitle>
+      <ContactFromWrapper>
+        <ContactForm />
+      </ContactFromWrapper>
       <SocialMediaWrapper>
         {socialMediaItems.map((item, index) => (
           <a href={item.url} target="_blank" rel="noreferrer" key={index}>

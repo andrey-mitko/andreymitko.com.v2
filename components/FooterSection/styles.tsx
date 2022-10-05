@@ -7,6 +7,10 @@ export const FooterWrapper = styled(Section)`
   background-color: var(--color-white);
 `;
 
+export const ContactFromWrapper = styled.div`
+  margin-top: 54px;
+`;
+
 export const FooterTitle = styled.h2`
   font-family: var(--font-lora);
   font-size: 28px;
@@ -27,6 +31,6 @@ interface SocialMediaProps {
 }
 
 export const SocialMediaIcon = styled.i<SocialMediaProps>`
-  font-size: 44px;
+  font-size: 40px;
   color: ${(props: SocialMediaProps) => `var(--color-${props.$fillColor})`};
 `;
