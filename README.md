@@ -10,6 +10,7 @@
 
 - TypeScript
 - Styled Components
+- Formik
 - Next.js
 - React.js
 
