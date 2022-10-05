@@ -35,8 +35,13 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 20px;
     }
 
-    input {
+    input, textarea {
       all: unset;
+    }
+
+    textarea {
+      resize: vertical;
+      height: auto; 
     }
 
     h1,h2,h3,h4,h5,h6,p,a,button {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Form } from "formik";
+import { Form, Field } from "formik";
 
 export const StyledForm = styled(Form)`
   display: flex;
@@ -21,7 +21,7 @@ export const FormFieldWrapper = styled.div`
   position: relative;
 `;
 
-export const FormField = styled.input<FormFieldProps>`
+export const FormField = styled(Field)<FormFieldProps>`
   width: 100%;
   font-size: 16px;
   padding-bottom: 23px;
@@ -43,11 +43,22 @@ export const StyledWarning = styled.i`
   font-size: 20px;
 `;
 
-export const SubmitButton = styled.button`
+interface SubmitButtonProps {
+  $isSending: boolean;
+  $isSubmitted: boolean;
+}
+
+export const SubmitButton = styled.button<SubmitButtonProps>`
   width: 100%;
   height: 56px;
-  background-color: var(--color-black100);
-  color: var(--color-white);
+  background-color: ${(props: SubmitButtonProps) =>
+    props.$isSending || props.$isSubmitted
+      ? "var(--color-black20)"
+      : "var(--color-black100)"};
+  color: ${(props: SubmitButtonProps) =>
+    props.$isSending || props.$isSubmitted
+      ? "var(--color-black100)"
+      : "var(--color-white)"};
   font-size: 20px;
   font-weight: 400;
   border-radius: 8px;
