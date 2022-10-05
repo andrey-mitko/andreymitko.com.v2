@@ -3,7 +3,7 @@ import { Section } from "../../styles/styles";
 
 export const PortfolioWrapper = styled(Section)`
   padding-top: 112px;
-  padding-bottom: 136px;
+  padding-bottom: 60px;
   background-color: var(--color-lightgreen);
 `;
 

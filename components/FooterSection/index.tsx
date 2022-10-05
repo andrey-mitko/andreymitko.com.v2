@@ -5,6 +5,8 @@ import {
   ContactFromWrapper,
   SocialMediaWrapper,
   SocialMediaIcon,
+  StyledFooter,
+  FooterText,
 } from "./styles";
 import { SocialMediaItem } from "../../types";
 import ContactForm from "../ContactForm";
@@ -57,6 +59,12 @@ const FooterSection = (props: Props) => {
           </a>
         ))}
       </SocialMediaWrapper>
+      <StyledFooter>
+        <FooterText>
+          Made with lots of coffee.
+          <br /> Andrey Mitko © 2022.
+        </FooterText>
+      </StyledFooter>
     </FooterWrapper>
   );
 };

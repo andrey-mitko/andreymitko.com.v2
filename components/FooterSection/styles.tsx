@@ -19,7 +19,7 @@ export const FooterTitle = styled.h2`
 `;
 
 export const SocialMediaWrapper = styled.div`
-  margin-top: 96px;
+  margin-top: 82px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,4 +33,16 @@ interface SocialMediaProps {
 export const SocialMediaIcon = styled.i<SocialMediaProps>`
   font-size: 40px;
   color: ${(props: SocialMediaProps) => `var(--color-${props.$fillColor})`};
+`;
+
+export const StyledFooter = styled.footer`
+  width: 100%;
+  margin-top: 60px;
+  text-align: center;
+  color: var(--color-black70);
+`;
+
+export const FooterText = styled.p`
+  font-size: 14px;
+  line-height: 2;
 `;
