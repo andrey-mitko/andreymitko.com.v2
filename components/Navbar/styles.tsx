@@ -55,7 +55,7 @@ export const ThankYouText = styled.p<MobileMenuProps>`
       transform: translateY(-16px) translateX(0);
     }
     to {
-      opacity: 0.1;
+      opacity: 1;
       transform: translateY(0) translateX(0);
     }
   }
@@ -66,7 +66,7 @@ export const ThankYouText = styled.p<MobileMenuProps>`
   text-align: center;
   width: 100%;
   color: var(--color-purple);
-  opacity: 0.7;
+  opacity: 1;
   animation-name: ${(props: MobileMenuProps) =>
     props.$isMobileMenuOpen === true ? "fadeMoveUpAnimation" : "unset"};
   animation-duration: 500ms;

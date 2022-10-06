@@ -21,6 +21,12 @@ const PortfolioSection = (props: Props) => {
       url: "https://www.tabager.com",
     },
     {
+      title: "Zonlo — Internships Across UK",
+      subtitle: "Product Design, Web Development",
+      image: ZonloImage,
+      url: "https://zonlo.vercel.app",
+    },
+    {
       title: "Joe’s Portfolio Website",
       subtitle: "Web Development",
       image: JoePeshallImage,
@@ -37,12 +43,6 @@ const PortfolioSection = (props: Props) => {
       subtitle: "Web Development",
       image: SpringImage,
       url: "https://www.byspring.co",
-    },
-    {
-      title: "Zonlo — Internships Across UK",
-      subtitle: "Product Design, Web Development",
-      image: ZonloImage,
-      url: "https://www.zonlo.co.uk",
     },
   ];
 
