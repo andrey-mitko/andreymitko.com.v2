@@ -67,6 +67,8 @@ const Navbar = (props: Props) => {
             <MobileMenuLink
               onClick={() => setIsMobileMenuOpen(false)}
               key={index}
+              $order={index + 1}
+              $isMobileMenuOpen={isMobileMenuOpen}
               href={item.url}
             >
               {" "}
@@ -75,7 +77,11 @@ const Navbar = (props: Props) => {
           ))}
         </MobileMenuLinksWrapper>
 
-        <ThankYouText>Thank you for visiting my website!</ThankYouText>
+        <div style={{ opacity: 0.7 }}>
+          <ThankYouText $isMobileMenuOpen={isMobileMenuOpen}>
+            Thank you for visiting my website!
+          </ThankYouText>
+        </div>
       </MobileMenu>
     </>
   );

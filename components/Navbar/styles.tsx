@@ -48,7 +48,18 @@ export const MobileMenuLinksWrapper = styled.div`
   }
 `;
 
-export const ThankYouText = styled.p`
+export const ThankYouText = styled.p<MobileMenuProps>`
+  @keyframes fadeMoveUpAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-16px) translateX(0);
+    }
+    to {
+      opacity: 0.1;
+      transform: translateY(0) translateX(0);
+    }
+  }
+
   position: fixed;
   bottom: 56px;
   font-size: 16px;
@@ -56,13 +67,42 @@ export const ThankYouText = styled.p`
   width: 100%;
   color: var(--color-purple);
   opacity: 0.7;
+  animation-name: ${(props: MobileMenuProps) =>
+    props.$isMobileMenuOpen === true ? "fadeMoveUpAnimation" : "unset"};
+  animation-duration: 500ms;
+  animation-delay: 500ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
 `;
 
-export const MobileMenuLink = styled.a`
+interface MobileMenuLinkProps {
+  $order: number;
+  $isMobileMenuOpen: boolean;
+}
+
+export const MobileMenuLink = styled.a<MobileMenuLinkProps>`
+  @keyframes fadeMoveDownAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-16px) translateX(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) translateX(0);
+    }
+  }
+
   font-size: 32px;
   font-weight: 600;
   font-family: var(--font-lora);
   color: var(--color-purple);
+  animation-name: ${(props: MobileMenuProps) =>
+    props.$isMobileMenuOpen === true ? "fadeMoveDownAnimation" : "unset"};
+  animation-duration: 350ms;
+  animation-delay: ${(props: MobileMenuLinkProps) =>
+    `calc(${props.$order} * 100ms)`};
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
 `;
 
 type TitleProps = {
