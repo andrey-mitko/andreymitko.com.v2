@@ -105,4 +105,8 @@ export const SectionTitle = styled.h2`
       props.color ? `var(--color-${props.color})` : "var(--color-blue)"};
     margin-top: 16px;
   }
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    font-size: 36px;
+  }
 `;

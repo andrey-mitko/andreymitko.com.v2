@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Section } from "../../styles/styles";
+import ScreenSizes from "../../utils/mediaVariables";
 
 export const AboutWrapper = styled(Section)`
   padding-top: 112px;
@@ -12,6 +13,10 @@ export const FeatureText = styled.h4`
   font-weight: 500;
   line-height: 1.5;
   color: var(--color-black100);
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    width: fit-content;
+  }
 `;
 
 export const AboutText = styled.p`
@@ -20,6 +25,11 @@ export const AboutText = styled.p`
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-black100);
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    margin-top: 0px;
+    max-width: 400px;
+  }
 `;
 
 export const FeaturesWrapper = styled.div`
@@ -32,6 +42,21 @@ export const FeaturesWrapper = styled.div`
   > :not(:first-child) {
     margin-top: 28px;
   }
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    min-width: 165px;
+    height: 100%;
+    margin-left: 120px;
+    margin-top: 0px;
+  }
 `;
 
-export const ContentWrapper = styled.div``;
+export const ContentWrapper = styled.div`
+  @media (min-width: ${ScreenSizes.tablet}) {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 56px;
+  }
+`;
