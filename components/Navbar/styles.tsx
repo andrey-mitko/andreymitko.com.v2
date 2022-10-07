@@ -52,7 +52,7 @@ export const ThankYouText = styled.p<MobileMenuProps>`
   @keyframes fadeMoveUpAnimation {
     from {
       opacity: 0;
-      transform: translateY(-16px) translateX(0);
+      transform: translateY(16px) translateX(0);
     }
     to {
       opacity: 1;

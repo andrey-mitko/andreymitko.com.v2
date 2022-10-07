@@ -23,7 +23,7 @@ export const SubtitleText = styled.p`
   margin-top: 16px;
   line-height: 1.2;
   font-weight: 500;
-  color: var(--color-black70);
+  color: var(--color-black100);
   font-size: 20px;
 `;
 
