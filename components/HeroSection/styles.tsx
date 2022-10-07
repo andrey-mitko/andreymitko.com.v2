@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Section } from "../../styles/styles";
+import ScreenSizes from "../../utils/mediaVariables";
 
 export const HeroWrapper = styled(Section)`
   display: flex;
@@ -13,6 +14,11 @@ export const HeroText = styled.h1`
   font-size: 37px;
   font-weight: 600;
   line-height: 1.25;
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    font-size: 48px;
+    width: 617px;
+  }
 `;
 
 export const BlueText = styled.span`

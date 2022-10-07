@@ -17,7 +17,8 @@ export const NavWrapper = styled.div`
   transition: ${navbarTransitions};
 
   @media (min-width: ${ScreenSizes.tablet}) {
-    padding: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
     padding-left: 68px;
     padding-right: 68px;
   }
