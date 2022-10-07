@@ -3,6 +3,7 @@ import Image from "next/image";
 
 export const CellWrapper = styled.div`
   width: 100%;
+  cursor: pointer;
 `;
 
 export const StyledImage = styled(Image)`

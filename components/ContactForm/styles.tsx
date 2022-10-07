@@ -62,4 +62,5 @@ export const SubmitButton = styled.button<SubmitButtonProps>`
   font-size: 20px;
   font-weight: 400;
   border-radius: 8px;
+  cursor: pointer;
 `;
