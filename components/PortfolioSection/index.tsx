@@ -48,12 +48,14 @@ const PortfolioSection = (props: Props) => {
 
   return (
     <PortfolioWrapper>
-      <SectionTitle color="green">Portfolio</SectionTitle>
-      <ContentWrapper>
-        {portfolioProjects.map((project, index) => {
-          return <PortfolioProjectCell key={index} project={project} />;
-        })}
-      </ContentWrapper>
+      <div className="container">
+        <SectionTitle color="green">Portfolio</SectionTitle>
+        <ContentWrapper>
+          {portfolioProjects.map((project, index) => {
+            return <PortfolioProjectCell key={index} project={project} />;
+          })}
+        </ContentWrapper>
+      </div>
     </PortfolioWrapper>
   );
 };

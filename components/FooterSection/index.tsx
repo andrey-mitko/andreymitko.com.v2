@@ -45,26 +45,28 @@ const FooterSection = (props: Props) => {
 
   return (
     <FooterWrapper>
-      <FooterTitle>Let’s work together.</FooterTitle>
-      <ContactFromWrapper>
-        <ContactForm />
-      </ContactFromWrapper>
-      <SocialMediaWrapper>
-        {socialMediaItems.map((item, index) => (
-          <a href={item.url} target="_blank" rel="noreferrer" key={index}>
-            <SocialMediaIcon
-              className={item.iconClass}
-              $fillColor={item.color}
-            />
-          </a>
-        ))}
-      </SocialMediaWrapper>
-      <StyledFooter>
-        <FooterText>
-          Made with lots of coffee.
-          <br /> Andrey Mitko © 2022.
-        </FooterText>
-      </StyledFooter>
+      <div className="container">
+        <FooterTitle>Let’s work together.</FooterTitle>
+        <ContactFromWrapper>
+          <ContactForm />
+        </ContactFromWrapper>
+        <SocialMediaWrapper>
+          {socialMediaItems.map((item, index) => (
+            <a href={item.url} target="_blank" rel="noreferrer" key={index}>
+              <SocialMediaIcon
+                className={item.iconClass}
+                $fillColor={item.color}
+              />
+            </a>
+          ))}
+        </SocialMediaWrapper>
+        <StyledFooter>
+          <FooterText>
+            Made with lots of coffee.
+            <br /> Andrey Mitko © 2022.
+          </FooterText>
+        </StyledFooter>
+      </div>
     </FooterWrapper>
   );
 };

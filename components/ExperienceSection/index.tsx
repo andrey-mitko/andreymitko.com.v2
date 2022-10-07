@@ -34,17 +34,19 @@ const ExperienceSection = (props: Props) => {
 
   return (
     <ExperienceWrapper>
-      <SectionTitle color="pink">Experience</SectionTitle>
-      <ContentWrapper>
-        {experiences.map((experience, index) => {
-          return <ExperienceCell key={index} experience={experience} />;
-        })}
+      <div className="container">
+        <SectionTitle color="pink">Experience</SectionTitle>
+        <ContentWrapper>
+          {experiences.map((experience, index) => {
+            return <ExperienceCell key={index} experience={experience} />;
+          })}
 
-        <MoreInfoWrapper>
-          <OpenToWorkText>Open for Work </OpenToWorkText>
-          <StyledLink href="/resume.pdf" title="EXPLORE FULL CV" />
-        </MoreInfoWrapper>
-      </ContentWrapper>
+          <MoreInfoWrapper>
+            <OpenToWorkText>Open for Work </OpenToWorkText>
+            <StyledLink href="/resume.pdf" title="EXPLORE FULL CV" />
+          </MoreInfoWrapper>
+        </ContentWrapper>
+      </div>
     </ExperienceWrapper>
   );
 };

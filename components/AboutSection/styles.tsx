@@ -29,6 +29,7 @@ export const AboutText = styled.p`
   @media (min-width: ${ScreenSizes.tablet}) {
     margin-top: 0px;
     max-width: 400px;
+    margin-left: 0px;
   }
 `;
 
