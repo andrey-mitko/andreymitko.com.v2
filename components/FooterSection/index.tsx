@@ -8,7 +8,7 @@ import {
   StyledFooter,
   FooterText,
 } from "./styles";
-import { SocialMediaItem } from "../../types";
+import { SocialMediaItem } from "../../utils/types";
 import ContactForm from "../ContactForm";
 
 type Props = {};

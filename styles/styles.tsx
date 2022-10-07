@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle, css } from "styled-components";
+import ScreenSizes from "../utils/mediaVariables";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
@@ -25,8 +26,7 @@ export const GlobalStyle = createGlobalStyle`
         --color-lightpurple: #FDFCFD;
 
         /* Screen Sizes */
-        --screen-tablet: 940px;
-        --screen-desktop: 1200px;
+        /* These are inside /utils/mediaVariables.tsx */
     }
 
     body {
@@ -82,6 +82,10 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Section = styled.div`
   padding: 0 24px 0 24px;
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    padding: 0 68px 0 68px;
+  }
 `;
 
 export const SectionTitle = styled.h2`

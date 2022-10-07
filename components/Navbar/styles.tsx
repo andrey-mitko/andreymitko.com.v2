@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
 const navbarTransitions = "all 0.2s ease-in-out";
+import ScreenSizes from "../../utils/mediaVariables";
 
 export const NavWrapper = styled.div`
   z-index: 3;
@@ -15,6 +15,12 @@ export const NavWrapper = styled.div`
     props.color ? `var(--color-${props.color})` : "white"};
   padding: 24px;
   transition: ${navbarTransitions};
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    padding: 32px;
+    padding-left: 68px;
+    padding-right: 68px;
+  }
 `;
 
 type MobileMenuProps = {
@@ -120,4 +126,32 @@ export const Title = styled.a<TitleProps>`
   font-size: 20px;
   cursor: pointer;
   transition: ${navbarTransitions};
+`;
+
+export const HamburgerWrapper = styled.div`
+  @media (min-width: ${ScreenSizes.tablet}) {
+    display: none;
+  }
+`;
+
+export const StandardMenuLink = styled.a`
+  display: none;
+  font-weight: 400;
+  font-size: 20px;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    display: block;
+  }
+`;
+
+export const NavigationWrapper = styled.nav`
+  @media (min-width: ${ScreenSizes.tablet}) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* Space Between Flex Items */
+    > :not(:first-child) {
+      margin-left: 48px;
+    }
+  }
 `;

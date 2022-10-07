@@ -6,9 +6,12 @@ import {
   MobileMenuLinksWrapper,
   MobileMenuLink,
   ThankYouText,
+  HamburgerWrapper,
+  StandardMenuLink,
+  NavigationWrapper,
 } from "./styles";
 import { Slant as Hamburger } from "hamburger-react";
-import { NavItem } from "../../types";
+import { NavItem } from "../../utils/types";
 
 type Props = {
   bgColor: string;
@@ -47,19 +50,31 @@ const Navbar = (props: Props) => {
         >
           Andrey Mitko
         </Title>
-        <nav className="nofocus">
-          <Hamburger
-            distance="sm"
-            duration={0.3}
-            size={24}
-            toggled={isMobileMenuOpen}
-            toggle={setIsMobileMenuOpen}
-            color={
-              isMobileMenuOpen ? "var(--color-purple)" : "var(--color-black100)"
-            }
-          />
-          {/* Laptop Menu Goes Here */}
-        </nav>
+        <NavigationWrapper className="nofocus">
+          <HamburgerWrapper>
+            <Hamburger
+              distance="sm"
+              duration={0.3}
+              size={24}
+              toggled={isMobileMenuOpen}
+              toggle={setIsMobileMenuOpen}
+              color={
+                isMobileMenuOpen
+                  ? "var(--color-purple)"
+                  : "var(--color-black100)"
+              }
+            />
+          </HamburgerWrapper>
+          {navigationItems.map((item, index) => (
+            <StandardMenuLink
+              onClick={() => setIsMobileMenuOpen(false)}
+              key={index}
+              href={item.url}
+            >
+              {item.title}
+            </StandardMenuLink>
+          ))}
+        </NavigationWrapper>
       </NavWrapper>
       <MobileMenu $isMobileMenuOpen={isMobileMenuOpen}>
         <MobileMenuLinksWrapper>

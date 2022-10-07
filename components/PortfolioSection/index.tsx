@@ -1,7 +1,7 @@
 import React from "react";
 import { PortfolioWrapper, ContentWrapper } from "./styles";
 import { SectionTitle } from "../../styles/styles";
-import { PortfolioProject } from "../../types";
+import { PortfolioProject } from "../../utils/types";
 import PortfolioProjectCell from "./PortfolioProjectCell";
 import TabagerImage from "../../public/portfolio/tabager.png";
 import JoePeshallImage from "../../public/portfolio/joepeshall.png";

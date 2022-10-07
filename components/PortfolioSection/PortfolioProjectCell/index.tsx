@@ -1,5 +1,5 @@
 import React from "react";
-import { PortfolioProject } from "../../../types";
+import { PortfolioProject } from "../../../utils/types";
 import {
   CellWrapper,
   ContentWrapper,
