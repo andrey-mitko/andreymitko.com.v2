@@ -8,14 +8,17 @@ export const NavWrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
+
+  background-color: ${(props: any) =>
+    props.color ? `var(--color-${props.color})` : "white"};
+  transition: ${navbarTransitions};
+`;
+
+export const NavContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${(props: any) =>
-    props.color ? `var(--color-${props.color})` : "white"};
   padding: 24px;
-  transition: ${navbarTransitions};
-
   @media (min-width: ${ScreenSizes.tablet}) {
     padding: 0px;
     padding-top: 32px;
@@ -42,6 +45,10 @@ export const MobileMenu = styled.div<MobileMenuProps>`
     props.$isMobileMenuOpen === true ? "all" : "none"};
   opacity: ${(props: MobileMenuProps) =>
     props.$isMobileMenuOpen === true ? 1 : 0};
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    display: none;
+  }
 `;
 
 export const MobileMenuLinksWrapper = styled.div`
@@ -130,6 +137,10 @@ export const Title = styled.a<TitleProps>`
   font-size: 20px;
   cursor: pointer;
   transition: ${navbarTransitions};
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    color: var(--color-black100);
+  }
 `;
 
 export const HamburgerWrapper = styled.div`

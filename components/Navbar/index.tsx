@@ -9,9 +9,11 @@ import {
   HamburgerWrapper,
   StandardMenuLink,
   NavigationWrapper,
+  NavContent
 } from "./styles";
 import { Slant as Hamburger } from "hamburger-react";
 import { NavItem } from "../../utils/types";
+import ScreenSizes from "../../utils/mediaVariables";
 
 type Props = {
   bgColor: string;
@@ -43,38 +45,40 @@ const Navbar = (props: Props) => {
   return (
     <>
       <NavWrapper color={isMobileMenuOpen ? "lightpurple" : props.bgColor}>
-        <Title
-          href="/#"
-          $isMobileMenuOpen={isMobileMenuOpen}
-          className="noselect"
-        >
-          Andrey Mitko
-        </Title>
-        <NavigationWrapper className="nofocus">
-          <HamburgerWrapper>
-            <Hamburger
-              distance="sm"
-              duration={0.3}
-              size={24}
-              toggled={isMobileMenuOpen}
-              toggle={setIsMobileMenuOpen}
-              color={
-                isMobileMenuOpen
-                  ? "var(--color-purple)"
-                  : "var(--color-black100)"
-              }
-            />
-          </HamburgerWrapper>
-          {navigationItems.map((item, index) => (
-            <StandardMenuLink
-              onClick={() => setIsMobileMenuOpen(false)}
-              key={index}
-              href={item.url}
-            >
-              {item.title}
-            </StandardMenuLink>
-          ))}
-        </NavigationWrapper>
+        <NavContent>
+          <Title
+            href="/#"
+            $isMobileMenuOpen={isMobileMenuOpen}
+            className="noselect"
+          >
+            Andrey Mitko
+          </Title>
+          <NavigationWrapper className="nofocus">
+            <HamburgerWrapper>
+              <Hamburger
+                distance="sm"
+                duration={0.3}
+                size={24}
+                toggled={isMobileMenuOpen}
+                toggle={setIsMobileMenuOpen}
+                color={
+                  isMobileMenuOpen
+                    ? "var(--color-purple)"
+                    : "var(--color-black100)"
+                }
+              />
+            </HamburgerWrapper>
+            {navigationItems.map((item, index) => (
+              <StandardMenuLink
+                onClick={() => setIsMobileMenuOpen(false)}
+                key={index}
+                href={item.url}
+              >
+                {item.title}
+              </StandardMenuLink>
+            ))}
+          </NavigationWrapper>
+        </NavContent>
       </NavWrapper>
       <MobileMenu $isMobileMenuOpen={isMobileMenuOpen}>
         <MobileMenuLinksWrapper>
