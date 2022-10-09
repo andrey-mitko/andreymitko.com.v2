@@ -1,6 +1,5 @@
 import React from "react";
-import { PortfolioWrapper, ContentWrapper } from "./styles";
-import { SectionTitle } from "../../styles/styles";
+import { PortfolioWrapper, ContentWrapper, StyledSectionTitle } from "./styles";
 import { PortfolioProject } from "../../utils/types";
 import PortfolioProjectCell from "./PortfolioProjectCell";
 import TabagerImage from "../../public/portfolio/tabager.png";
@@ -49,7 +48,7 @@ const PortfolioSection = (props: Props) => {
   return (
     <PortfolioWrapper>
       <div className="container">
-        <SectionTitle color="green">Portfolio</SectionTitle>
+        <StyledSectionTitle color="green">Portfolio</StyledSectionTitle>
         <ContentWrapper>
           {portfolioProjects.map((project, index) => {
             return <PortfolioProjectCell key={index} project={project} />;

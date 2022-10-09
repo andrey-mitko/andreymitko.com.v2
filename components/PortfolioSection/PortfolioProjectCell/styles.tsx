@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import Image from "next/image";
+import ScreenSizes from "../../../utils/mediaVariables";
 
 export const CellWrapper = styled.div`
   width: 100%;
   cursor: pointer;
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    /* max-width: 298px; */
+  }
 `;
 
 export const StyledImage = styled(Image)`
@@ -25,7 +30,7 @@ export const SubtitleText = styled.p`
   line-height: 1.2;
   font-weight: 500;
   color: var(--color-black100);
-  font-size: 20px;
+  font-size: 16px;
 `;
 
 export const LinkWrapper = styled.div`

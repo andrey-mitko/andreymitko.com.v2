@@ -35,6 +35,9 @@ const PortfolioProjectCell = (props: Props) => {
         {/* <SubtitleText>{props.project.subtitle}</SubtitleText> */}
         <LinkWrapper>
           <StyledLink
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
             href={props.project.url}
             title={
               props.project.url.includes("apps.apple.com")
