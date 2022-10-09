@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Section } from "../../styles/styles";
+import ScreenSizes from "../../utils/mediaVariables";
 
 export const ExperienceWrapper = styled(Section)`
   padding-top: 112px;
@@ -17,6 +18,10 @@ export const ContentWrapper = styled.div`
   /* Space Between Flex Items */
   > :not(:first-child) {
     margin-top: 40px;
+  }
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    margin-top: 56px;
   }
 `;
 

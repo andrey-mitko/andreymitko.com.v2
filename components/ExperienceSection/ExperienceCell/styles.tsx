@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ScreenSizes from "../../../utils/mediaVariables";
 
 export const CellWrapper = styled.div`
   width: 100%;
@@ -13,6 +14,14 @@ export const ContentWrapper = styled.div`
   > :not(:first-child) {
     margin-top: 16px;
   }
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    flex-direction: row;
+    align-items: center;
+    > :not(:first-child) {
+      margin-top: 0px;
+    }
+  }
 `;
 
 export const CompanyPeriodWrapper = styled.div`
@@ -23,6 +32,14 @@ export const CompanyPeriodWrapper = styled.div`
   /* Space Between Flex Items */
   > :not(:first-child) {
     margin-top: 16px;
+  }
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    flex-direction: row;
+    width: 63%;
+    > :not(:first-child) {
+      margin-top: 0px;
+    }
   }
 `;
 
