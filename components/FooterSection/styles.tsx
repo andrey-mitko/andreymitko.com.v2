@@ -1,29 +1,59 @@
 import styled from "styled-components";
 import { Section } from "../../styles/styles";
+import ScreenSizes from "../../utils/mediaVariables";
 
 export const FooterWrapper = styled(Section)`
   padding-top: 112px;
   padding-bottom: 69px;
   background-color: var(--color-white);
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 36px;
+      grid-template-areas:
+        "title contact"
+        "socials contact"
+        ". contact"
+        "footer contact";
+    }
+  }
 `;
 
 export const ContactFromWrapper = styled.div`
+  grid-area: contact;
   margin-top: 54px;
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    margin-top: 0px;
+  }
 `;
 
 export const FooterTitle = styled.h2`
+  grid-area: title;
   font-family: var(--font-lora);
   font-size: 28px;
   font-weight: 600;
   line-height: 1.2;
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    font-size: 36px;
+  }
 `;
 
 export const SocialMediaWrapper = styled.div`
+  grid-area: socials;
   margin-top: 82px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    margin-top: 24px;
+    width: 80%;
+  }
 `;
 
 interface SocialMediaProps {
@@ -33,13 +63,27 @@ interface SocialMediaProps {
 export const SocialMediaIcon = styled.i<SocialMediaProps>`
   font-size: 40px;
   color: ${(props: SocialMediaProps) => `var(--color-${props.$fillColor})`};
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    font-size: 36px;
+  }
 `;
 
 export const StyledFooter = styled.footer`
+  grid-area: footer;
   width: 100%;
   margin-top: 60px;
   text-align: center;
   color: var(--color-black70);
+  @media (min-width: ${ScreenSizes.tablet}) {
+    text-align: left;
+  }
+`;
+
+export const FooterBr = styled.br`
+  @media (min-width: ${ScreenSizes.tablet}) {
+    display: none;
+  }
 `;
 
 export const FooterText = styled.p`

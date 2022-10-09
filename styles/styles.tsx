@@ -84,6 +84,7 @@ export const Section = styled.div`
   padding: 0 24px 0 24px;
 
   @media (min-width: ${ScreenSizes.tablet}) {
+    padding: 0;
     .container {
       max-width: 715px;
       margin: 0 auto;

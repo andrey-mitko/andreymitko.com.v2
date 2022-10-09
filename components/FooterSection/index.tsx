@@ -7,6 +7,7 @@ import {
   SocialMediaIcon,
   StyledFooter,
   FooterText,
+  FooterBr,
 } from "./styles";
 import { SocialMediaItem } from "../../utils/types";
 import ContactForm from "../ContactForm";
@@ -63,7 +64,7 @@ const FooterSection = (props: Props) => {
         <StyledFooter>
           <FooterText>
             Made with lots of coffee.
-            <br /> Andrey Mitko © 2022.
+            <FooterBr /> Andrey Mitko © 2022.
           </FooterText>
         </StyledFooter>
       </div>
@@ -72,23 +73,3 @@ const FooterSection = (props: Props) => {
 };
 
 export default FooterSection;
-
-// Section
-// // Section Title
-
-// // Contact Form
-// // // Name Field
-// // // Email Field
-// // // Message Field
-// // // Submit Button
-
-// // Social Media Links
-// // // LinkedIn
-// // // GitHub
-// // // Product Hunt
-// // // Twitter
-// // // Medium
-
-// // Footer Content (<footer>)
-// // // Footer Text
-// // // Copyright Text
