@@ -19,6 +19,12 @@ export const FooterWrapper = styled(Section)`
         "footer contact";
     }
   }
+
+  @media (min-width: ${ScreenSizes.laptop}) {
+    .container {
+      gap: 0 40px;
+    }
+  }
 `;
 
 export const ContactFromWrapper = styled.div`

@@ -90,6 +90,14 @@ export const Section = styled.div`
       margin: 0 auto;
     }
   }
+
+  @media (min-width: ${ScreenSizes.laptop}) {
+    padding: 0;
+    .container {
+      max-width: 815px;
+      margin: 0 auto;
+    }
+  }
 `;
 
 export const SectionTitle = styled.h2`

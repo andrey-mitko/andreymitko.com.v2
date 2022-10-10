@@ -19,6 +19,12 @@ export const HeroText = styled.h1`
     font-size: 48px;
     width: 617px;
   }
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    font-size: 56px;
+    width: 1073px;
+    text-align: center;
+  }
 `;
 
 export const BlueText = styled.span`

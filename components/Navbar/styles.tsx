@@ -25,8 +25,20 @@ export const NavContent = styled.div`
     padding-bottom: 32px;
     max-width: 715px;
     margin: 0 auto;
-    /* padding-left: 68px; */
-    /* padding-right: 68px; */
+  }
+
+  @media (min-width: ${ScreenSizes.laptop}) {
+    padding: 0px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    max-width: 815px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    padding-left: 68px;
+    padding-right: 68px;
+    max-width: 1286px;
   }
 `;
 
