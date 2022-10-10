@@ -6,6 +6,20 @@ export const AboutWrapper = styled(Section)`
   padding-top: 112px;
   padding-bottom: 136px;
   background-color: var(--color-lightblue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: ${ScreenSizes.desktop}) {
+    height: 95vh;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
 `;
 
 export const FeatureText = styled.h4`
@@ -31,6 +45,10 @@ export const AboutText = styled.p`
     max-width: 400px;
     margin-left: 0px;
   }
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    margin-left: 130px;
+  }
 `;
 
 export const FeaturesWrapper = styled.div`
@@ -50,6 +68,11 @@ export const FeaturesWrapper = styled.div`
     margin-left: 120px;
     margin-top: 0px;
   }
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    margin-left: 212px;
+    margin-top: 0px;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -59,5 +82,10 @@ export const ContentWrapper = styled.div`
     flex-direction: row-reverse;
     justify-content: space-between;
     margin-top: 56px;
+  }
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    margin-top: 0px;
+    flex-direction: row;
   }
 `;

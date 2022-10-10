@@ -63,4 +63,9 @@ export const StyledArrowUp = styled.i`
   animation: fadeMoveAnimation 2.5s infinite alternate;
   animation-delay: 1s;
   animation-fill-mode: both;
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    bottom: 56px;
+    font-size: 36px;
+  }
 `;

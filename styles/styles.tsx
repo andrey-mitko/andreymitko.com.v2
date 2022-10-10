@@ -98,6 +98,13 @@ export const Section = styled.div`
       margin: 0 auto;
     }
   }
+  @media (min-width: ${ScreenSizes.desktop}) {
+    padding: 0;
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -120,5 +127,9 @@ export const SectionTitle = styled.h2`
 
   @media (min-width: ${ScreenSizes.tablet}) {
     font-size: 36px;
+  }
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    font-size: 40px;
   }
 `;
