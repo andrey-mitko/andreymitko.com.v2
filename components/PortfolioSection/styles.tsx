@@ -18,9 +18,9 @@ export const StyledSectionTitle = styled(SectionTitle)`
       content: "";
       display: block;
       margin: 0 auto;
-      width: 50px;
-      height: 5px;
-      border-radius: 2.5px;
+      width: 48px;
+      height: 7px;
+      border-radius: 3.5px;
       // ts-ignore
       background-color: ${(props: any) =>
         props.color ? `var(--color-${props.color})` : "var(--color-blue)"};

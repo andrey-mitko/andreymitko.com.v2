@@ -116,9 +116,9 @@ export const SectionTitle = styled.h2`
   ::after {
     content: "";
     display: block;
-    width: 50px;
-    height: 5px;
-    border-radius: 2.5px;
+    width: 48px;
+    height: 7px;
+    border-radius: 3.5px;
     // ts-ignore
     background-color: ${(props: any) =>
       props.color ? `var(--color-${props.color})` : "var(--color-blue)"};
