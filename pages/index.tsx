@@ -13,7 +13,7 @@ import FooterSection from "../components/FooterSection";
 const Home: NextPage = () => {
   const [hasMounted, setHasMounted] = useState(false);
 
-  const navBarHeight = "-100px";
+  const navBarHeight = "-87px";
 
   const [heroSectionRef, heroSectionInView] = useInView({
     rootMargin: navBarHeight,
