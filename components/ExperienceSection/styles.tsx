@@ -6,6 +6,20 @@ export const ExperienceWrapper = styled(Section)`
   padding-top: 112px;
   padding-bottom: 136px;
   background-color: var(--color-lightpink);
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    height: 90vh;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -22,6 +36,12 @@ export const ContentWrapper = styled.div`
 
   @media (min-width: ${ScreenSizes.tablet}) {
     margin-top: 56px;
+  }
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    margin-top: 0px;
+    flex-grow: 1;
+    margin-left: 112px;
   }
 `;
 

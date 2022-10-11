@@ -10,11 +10,17 @@ export const AboutWrapper = styled(Section)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @media (min-width: ${ScreenSizes.desktop}) {
-    height: 95vh;
+    height: 90vh;
     padding-top: 0px;
     padding-bottom: 0px;
+    display: block;
+
     .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
       flex-direction: row;
       align-items: flex-start;
