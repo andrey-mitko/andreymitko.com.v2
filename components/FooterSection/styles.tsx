@@ -24,6 +24,9 @@ export const FooterWrapper = styled(Section)`
     .container {
       gap: 0 40px;
     }
+
+    padding-top: 120px;
+    padding-bottom: 112px;
   }
 `;
 
@@ -46,6 +49,10 @@ export const FooterTitle = styled.h2`
   @media (min-width: ${ScreenSizes.tablet}) {
     font-size: 36px;
   }
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    font-size: 40px;
+  }
 `;
 
 export const SocialMediaWrapper = styled.div`
@@ -58,7 +65,10 @@ export const SocialMediaWrapper = styled.div`
 
   @media (min-width: ${ScreenSizes.tablet}) {
     margin-top: 24px;
-    width: 80%;
+    width: fit-content;
+    > :not(:first-child) {
+      margin-left: 28px;
+    }
   }
 `;
 

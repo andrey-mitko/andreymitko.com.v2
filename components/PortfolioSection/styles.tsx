@@ -7,6 +7,11 @@ export const PortfolioWrapper = styled(Section)`
   padding-top: 112px;
   padding-bottom: 60px;
   background-color: var(--color-lightgreen);
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 `;
 
 export const StyledSectionTitle = styled(SectionTitle)`
@@ -46,6 +51,14 @@ export const ContentWrapper = styled.div`
     margin-top: 56px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 76px;
+    > :not(:first-child) {
+      margin-top: 0px;
+    }
+  }
+
+  @media (min-width: ${ScreenSizes.desktop}) {
+    grid-template-columns: repeat(3, 1fr);
     gap: 76px;
     > :not(:first-child) {
       margin-top: 0px;
