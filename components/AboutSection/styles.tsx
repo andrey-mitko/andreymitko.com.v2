@@ -12,7 +12,7 @@ export const AboutWrapper = styled(Section)`
   align-items: center;
 
   @media (min-width: ${ScreenSizes.desktop}) {
-    height: 80vh;
+    height: 90vh;
     padding-top: 0px;
     padding-bottom: 0px;
     display: block;

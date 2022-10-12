@@ -2,6 +2,25 @@ import styled, { createGlobalStyle, css } from "styled-components";
 import ScreenSizes from "../utils/mediaVariables";
 
 export const GlobalStyle = createGlobalStyle`
+
+     
+   
+    html {
+      @media (min-width: ${ScreenSizes.tablet}) {
+        scroll-behavior: smooth;
+      }
+    }
+      
+    
+    /* Adjusts # links for fixed header */
+    [id]::before {
+      content: '';
+      display: block;
+      height:      86px;
+      margin-top: -86px;
+      visibility: hidden;
+    }
+
     :root {
         /* Fonts */
         --font-lato: Lato, sans-serif;
