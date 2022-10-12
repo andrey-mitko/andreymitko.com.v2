@@ -47,6 +47,7 @@ const Home: NextPage = () => {
             content="Relevant education & experience, CV, Portfolio and other information related to Andrey Mitko"
           />
           <link rel="icon" href="/favicon.ico" />
+          <meta property="og:image" content="/og.png" />
         </Head>
         <Navbar
           bgColor={
