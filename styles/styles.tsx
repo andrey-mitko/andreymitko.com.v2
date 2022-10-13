@@ -14,11 +14,13 @@ export const GlobalStyle = createGlobalStyle`
     
     /* Adjusts # links for fixed header */
     [id]::before {
-      content: '';
-      display: block;
-      height:      86px;
-      margin-top: -86px;
-      visibility: hidden;
+      @media (min-width: ${ScreenSizes.tablet}) {
+        content: '';
+        display: block;
+        height:      86px;
+        margin-top: -86px;
+        visibility: hidden;
+      }
     }
 
     :root {
