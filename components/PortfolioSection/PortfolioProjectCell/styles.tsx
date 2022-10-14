@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Image from "next/image";
 import ScreenSizes from "../../../utils/mediaVariables";
 
 export const CellWrapper = styled.div`
@@ -9,10 +8,28 @@ export const CellWrapper = styled.div`
   @media (min-width: ${ScreenSizes.tablet}) {
     /* max-width: 298px; */
   }
+  @media (min-width: ${ScreenSizes.laptop}) and (hover: hover) {
+    :hover {
+      .image-wrapper {
+        transform: scale(0.985);
+        img {
+          transform: scale(1.035);
+        }
+      }
+      a {
+        color: var(--color-black100);
+      }
+    }
+  }
 `;
 
-export const StyledImage = styled(Image)`
+export const ImageWrapper = styled.div`
+  transition: all 0.25s ease-in-out;
   border-radius: 8px;
+  overflow: hidden;
+  img {
+    transition: all 0.25s ease-in-out;
+  }
 `;
 
 export const ContentWrapper = styled.div`

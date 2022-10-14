@@ -4,10 +4,11 @@ import {
   CellWrapper,
   ContentWrapper,
   TitleText,
-  SubtitleText,
+  ImageWrapper,
+  // SubtitleText,
   LinkWrapper,
-  StyledImage,
 } from "./styles";
+import Image from "next/image";
 import StyledLink from "../../StyledLink";
 
 type Props = {
@@ -21,14 +22,18 @@ const openLink = (url: string) => {
 const PortfolioProjectCell = (props: Props) => {
   return (
     <CellWrapper onClick={() => openLink(props.project.url)}>
-      <StyledImage
-        placeholder="blur"
-        src={props.project.image}
-        alt={props.project.title}
-        layout="responsive"
-        width={100}
-        height={100}
-      />
+      <ImageWrapper className="image-wrapper">
+        <Image
+          placeholder="blur"
+          src={props.project.image}
+          alt={props.project.title}
+          layout="responsive"
+          width={100}
+          height={100}
+          className="image"
+        />
+      </ImageWrapper>
+
       <ContentWrapper>
         <TitleText>{props.project.title}</TitleText>
         {/* Might be added Later if neccesary */}
