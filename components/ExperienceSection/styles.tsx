@@ -68,7 +68,7 @@ export const StyledArrowRight = styled.i`
 `;
 
 export const OpenToWorkText = styled.h6`
-  color: var(--color-black50);
+  color: var(--color-black70);
   font-size: 16px;
   display: none;
 
@@ -78,7 +78,7 @@ export const OpenToWorkText = styled.h6`
 `;
 
 export const OpenToWorkTextMobile = styled.h6`
-  color: var(--color-black50);
+  color: var(--color-black70);
   font-size: 16px;
   display: block;
   @media (min-width: ${ScreenSizes.tablet}) {
