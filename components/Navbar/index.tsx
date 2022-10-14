@@ -9,7 +9,7 @@ import {
   HamburgerWrapper,
   StandardMenuLink,
   NavigationWrapper,
-  NavContent
+  NavContent,
 } from "./styles";
 import { Slant as Hamburger } from "hamburger-react";
 import { NavItem } from "../../utils/types";
@@ -47,6 +47,7 @@ const Navbar = (props: Props) => {
       <NavWrapper color={isMobileMenuOpen ? "lightpurple" : props.bgColor}>
         <NavContent>
           <Title
+            onClick={() => setIsMobileMenuOpen(false)}
             href="/#"
             $isMobileMenuOpen={isMobileMenuOpen}
             className="noselect"
