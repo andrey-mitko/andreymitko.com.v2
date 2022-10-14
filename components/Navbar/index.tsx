@@ -47,7 +47,6 @@ const Navbar = (props: Props) => {
       <NavWrapper color={isMobileMenuOpen ? "lightpurple" : props.bgColor}>
         <NavContent>
           <Title
-            onClick={() => setIsMobileMenuOpen(false)}
             href="/#"
             $isMobileMenuOpen={isMobileMenuOpen}
             className="noselect"

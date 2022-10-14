@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
      
    
     html {
+      scroll-behavior: initial;
       @media (min-width: ${ScreenSizes.tablet}) {
         scroll-behavior: smooth;
       }

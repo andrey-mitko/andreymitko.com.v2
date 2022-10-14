@@ -68,5 +68,20 @@ export const StyledArrowRight = styled.i`
 `;
 
 export const OpenToWorkText = styled.h6`
-  color: var(--color-black70);
+  color: var(--color-black50);
+  font-size: 16px;
+  display: none;
+
+  @media (min-width: ${ScreenSizes.tablet}) {
+    display: block;
+  }
+`;
+
+export const OpenToWorkTextMobile = styled.h6`
+  color: var(--color-black50);
+  font-size: 16px;
+  display: block;
+  @media (min-width: ${ScreenSizes.tablet}) {
+    display: none;
+  }
 `;

@@ -4,6 +4,7 @@ import {
   ContentWrapper,
   MoreInfoWrapper,
   OpenToWorkText,
+  OpenToWorkTextMobile,
 } from "./styles";
 import { SectionTitle } from "../../styles/styles";
 import ExperienceCell from "./ExperienceCell";
@@ -42,7 +43,8 @@ const ExperienceSection = (props: Props) => {
           })}
 
           <MoreInfoWrapper>
-            <OpenToWorkText>Open for Work </OpenToWorkText>
+            <OpenToWorkText>* Currently open for work! </OpenToWorkText>
+            <OpenToWorkTextMobile>* Open for Work! </OpenToWorkTextMobile>
             <StyledLink href="/resume.pdf" title="EXPLORE FULL CV" />
           </MoreInfoWrapper>
         </ContentWrapper>
