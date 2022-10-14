@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   AboutWrapper,
   FeatureText,
@@ -7,13 +7,40 @@ import {
   ContentWrapper,
 } from "./styles";
 import { SectionTitle } from "../../styles/styles";
+import { gsap } from "gsap";
+
 type Props = {};
 
 const AboutSection = (props: Props) => {
+
+  const comp = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.set(".section-title", { opacity: 0, y: 48 });
+      gsap.to(".section-title", {
+        scrollTrigger: {
+          trigger: ".section-title",
+          start: "top 50%",
+          markers: true,
+        },
+        delay: 0.5,
+        duration: 1.5,
+        opacity: 1,
+        y: 0,
+        ease: "power3.out",
+      });
+    }, comp);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <AboutWrapper>
+    <AboutWrapper ref={comp}>
       <div className="container">
-        <SectionTitle color="blue">About</SectionTitle>
+        <SectionTitle className="section-title" color="blue">
+          About
+        </SectionTitle>
 
         <ContentWrapper>
           <FeaturesWrapper>
