@@ -47,6 +47,9 @@ const Home: NextPage = () => {
           delay: 1,
           duration: 1,
           opacity: 1,
+        });
+        tl.to(["#main-content", ".footer"], {
+          delay: 1,
           display: "block",
         });
       }, page);
