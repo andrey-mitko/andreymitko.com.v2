@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { PortfolioWrapper, ContentWrapper, StyledSectionTitle } from "./styles";
 import { PortfolioProject } from "../../utils/types";
 import PortfolioProjectCell from "./PortfolioProjectCell";
@@ -7,7 +7,7 @@ import JoePeshallImage from "../../public/portfolio/joepeshall.png";
 import DriftImage from "../../public/portfolio/drift.png";
 import SpringImage from "../../public/portfolio/byspring.png";
 import ZonloImage from "../../public/portfolio/zonlo.png";
-
+import { gsap } from "gsap";
 type Props = {};
 
 const PortfolioSection = (props: Props) => {
@@ -45,13 +45,50 @@ const PortfolioSection = (props: Props) => {
     },
   ];
 
+  const comp = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.set(".animate-appear", { opacity: 0, y: 48 });
+      gsap.to(".animate-appear", {
+        scrollTrigger: {
+          trigger: ".section-title",
+          start: "-25% 55%",
+          markers: false,
+        },
+        delay: 0.25,
+        duration: 1.5,
+        opacity: 1,
+        y: 0,
+        ease: "power3.out",
+        stagger: {
+          axis: "x",
+          amount: 0.75,
+        },
+      });
+    }, comp);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <PortfolioWrapper>
+    <PortfolioWrapper ref={comp}>
       <div className="container">
-        <StyledSectionTitle color="green">Portfolio</StyledSectionTitle>
+        <StyledSectionTitle
+          className="section-title animate-appear"
+          color="green"
+        >
+          Portfolio
+        </StyledSectionTitle>
         <ContentWrapper>
           {portfolioProjects.map((project, index) => {
-            return <PortfolioProjectCell key={index} project={project} />;
+            return (
+              <PortfolioProjectCell
+                className="animate-appear"
+                key={index}
+                project={project}
+              />
+            );
           })}
         </ContentWrapper>
       </div>

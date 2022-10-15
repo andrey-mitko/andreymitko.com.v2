@@ -13,6 +13,7 @@ import StyledLink from "../../StyledLink";
 
 type Props = {
   project: PortfolioProject;
+  className?: string;
 };
 
 const openLink = (url: string) => {
@@ -21,7 +22,10 @@ const openLink = (url: string) => {
 
 const PortfolioProjectCell = (props: Props) => {
   return (
-    <CellWrapper onClick={() => openLink(props.project.url)}>
+    <CellWrapper
+      className={`${props.className}`}
+      onClick={() => openLink(props.project.url)}
+    >
       <ImageWrapper className="image-wrapper">
         <Image
           placeholder="blur"
