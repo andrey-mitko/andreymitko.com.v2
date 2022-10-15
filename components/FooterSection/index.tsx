@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   FooterWrapper,
   FooterTitle,
@@ -44,6 +44,8 @@ const FooterSection = (props: Props) => {
     },
   ];
 
+  const [isLinkHover, setIsLinkHover] = useState(false);
+
   return (
     <FooterWrapper>
       <div className="container">
@@ -51,9 +53,16 @@ const FooterSection = (props: Props) => {
         <ContactFromWrapper>
           <ContactForm />
         </ContactFromWrapper>
-        <SocialMediaWrapper>
+        <SocialMediaWrapper $isLinkHover={isLinkHover}>
           {socialMediaItems.map((item, index) => (
-            <a href={item.url} target="_blank" rel="noreferrer" key={index}>
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noreferrer"
+              key={index}
+              onMouseOver={() => setIsLinkHover(true)}
+              onMouseOut={() => setIsLinkHover(false)}
+            >
               <SocialMediaIcon
                 className={item.iconClass}
                 $fillColor={item.color}

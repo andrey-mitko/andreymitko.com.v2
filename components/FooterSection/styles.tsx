@@ -55,7 +55,11 @@ export const FooterTitle = styled.h2`
   }
 `;
 
-export const SocialMediaWrapper = styled.div`
+interface SocialMediaWrapperProps {
+  $isLinkHover: boolean;
+}
+
+export const SocialMediaWrapper = styled.div<SocialMediaWrapperProps>`
   grid-area: socials;
   margin-top: 82px;
   display: flex;
@@ -66,8 +70,23 @@ export const SocialMediaWrapper = styled.div`
   @media (min-width: ${ScreenSizes.tablet}) {
     margin-top: 24px;
     width: fit-content;
+
+    > * {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 8px;
+      @media (hover: hover) {
+        opacity: ${(props: SocialMediaWrapperProps) =>
+          props.$isLinkHover ? "0.5" : "1"};
+        transition: all 0.25s ease-in-out;
+        :hover {
+          opacity: 1;
+        }
+      }
+    }
     > :not(:first-child) {
-      margin-left: 28px;
+      margin-left: 12px;
+      padding-left: 8px;
     }
   }
 `;
