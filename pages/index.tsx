@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-
+import { gsap } from "gsap";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
@@ -31,59 +31,73 @@ const Home: NextPage = () => {
     rootMargin: navBarHeight,
   });
 
+  const page = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
     setHasMounted(true);
+    let ctx = gsap.context(() => {
+      var tl = gsap.timeline();
+      tl.set("#main-content", { opacity: 0 });
+      tl.set(".footer", { opacity: 0 });
+      tl.to(["#main-content", ".footer"], {
+        delay: 3,
+        duration: 1,
+        opacity: 1,
+      });
+    }, page);
+
+    return () => ctx.revert();
   }, []);
 
-  if (!hasMounted) {
-    return null;
-  } else {
-    return (
-      <div>
-        <Head>
-          <title>Andrey Mitko</title>
-          <meta
-            name="description"
-            content="Relevant education & experience, CV, Portfolio and other information related to Andrey Mitko"
-          />
-          <link rel="icon" href="/favicon.ico" />
-          <meta property="og:image" content="/og.png" />
-        </Head>
-        <Navbar
-          bgColor={
-            heroSectionInView
-              ? "white"
-              : aboutSectionInView
-              ? "lightblue"
-              : experienceSectionInView
-              ? "lightpink"
-              : portfolioSectionInView
-              ? "lightgreen"
-              : footerSectionInView
-              ? "white"
-              : "white"
-          }
+  // if (!hasMounted) {
+  //   return null;
+  // } else {
+  return (
+    <div ref={page}>
+      <Head>
+        <title>Andrey Mitko</title>
+        <meta
+          name="description"
+          content="Relevant education & experience, CV, Portfolio and other information related to Andrey Mitko"
         />
-        <main>
-          <div ref={heroSectionRef}>
-            <HeroSection />
-          </div>
-          <div id="about" ref={aboutSectionRef}>
-            <AboutSection />
-          </div>
-          <div id="experience" ref={experienceSectionRef}>
-            <ExperienceSection />
-          </div>
-          <div id="portfolio" ref={portfolioSectionRef}>
-            <PortfolioSection />
-          </div>
-        </main>
-        <div id="contact" ref={footerSectionRef}>
-          <FooterSection />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="/og.png" />
+      </Head>
+      <Navbar
+        bgColor={
+          heroSectionInView
+            ? "white"
+            : aboutSectionInView
+            ? "lightblue"
+            : experienceSectionInView
+            ? "lightpink"
+            : portfolioSectionInView
+            ? "lightgreen"
+            : footerSectionInView
+            ? "white"
+            : "white"
+        }
+      />
+      <main id="main-content">
+        <div ref={heroSectionRef}>
+          <HeroSection />
         </div>
+        <div id="about" ref={aboutSectionRef}>
+          <AboutSection />
+        </div>
+        <div id="experience" ref={experienceSectionRef}>
+          <ExperienceSection />
+        </div>
+        <div id="portfolio" ref={portfolioSectionRef}>
+          <PortfolioSection />
+        </div>
+      </main>
+      <div className="footer" id="contact" ref={footerSectionRef}>
+        <FooterSection />
       </div>
-    );
-  }
+    </div>
+  );
 };
+// };
 
 export default Home;

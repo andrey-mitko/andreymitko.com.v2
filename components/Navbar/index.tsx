@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   NavWrapper,
   Title,
@@ -13,7 +13,7 @@ import {
 } from "./styles";
 import { Slant as Hamburger } from "hamburger-react";
 import { NavItem } from "../../utils/types";
-import ScreenSizes from "../../utils/mediaVariables";
+import { gsap } from "gsap";
 
 type Props = {
   bgColor: string;
@@ -42,18 +42,47 @@ const Navbar = (props: Props) => {
     },
   ];
 
+  const comp = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      var tl = gsap.timeline();
+      tl.set(".nav-content", { y: "50vh" });
+      tl.set(".nav-title", { opacity: 1 });
+      tl.set(".nav-links", { opacity: 0 });
+      tl.to(".nav-content", {
+        delay: 1,
+        duration: 2,
+        opacity: 1,
+        y: 0,
+        ease: "power3.out",
+      });
+      tl.to(".nav-links", {
+        delay: 0,
+        duration: 1,
+        opacity: 1,
+        ease: "power3.out",
+      });
+    }, comp);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
-      <NavWrapper color={isMobileMenuOpen ? "lightpurple" : props.bgColor}>
-        <NavContent>
+      <NavWrapper
+        color={isMobileMenuOpen ? "lightpurple" : props.bgColor}
+        ref={comp}
+      >
+        <NavContent className="nav-content">
           <Title
             href="/#"
             $isMobileMenuOpen={isMobileMenuOpen}
-            className="noselect"
+            className="noselect nav-title"
           >
             Andrey Mitko
           </Title>
-          <NavigationWrapper className="nofocus">
+          <NavigationWrapper className="nofocus nav-links">
             <HamburgerWrapper>
               <Hamburger
                 distance="sm"

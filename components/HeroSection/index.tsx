@@ -22,7 +22,7 @@ const HeroSection = (props: Props, ref: any) => {
       // and it's properly scoped to our component
       gsap.set(".hero-text", { opacity: 0, y: 48 });
       gsap.to(".hero-text", {
-        delay: 0.5,
+        delay: 3,
         duration: 1.5,
         opacity: 1,
         y: 0,
