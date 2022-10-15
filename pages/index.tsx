@@ -35,69 +35,75 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     setHasMounted(true);
-    let ctx = gsap.context(() => {
-      var tl = gsap.timeline();
-      tl.set("#main-content", { opacity: 0 });
-      tl.set(".footer", { opacity: 0 });
-      tl.to(["#main-content", ".footer"], {
-        delay: 3,
-        duration: 1,
-        opacity: 1,
-      });
-    }, page);
-
-    return () => ctx.revert();
   }, []);
 
-  // if (!hasMounted) {
-  //   return null;
-  // } else {
-  return (
-    <div ref={page}>
-      <Head>
-        <title>Andrey Mitko</title>
-        <meta
-          name="description"
-          content="Relevant education & experience, CV, Portfolio and other information related to Andrey Mitko"
+  useEffect(() => {
+    if (hasMounted) {
+      let ctx = gsap.context(() => {
+        var tl = gsap.timeline();
+        tl.set("#main-content", { opacity: 0, display: "none" });
+        tl.set(".footer", { opacity: 0, display: "none" });
+        tl.to(["#main-content", ".footer"], {
+          delay: 1,
+          duration: 1,
+          opacity: 1,
+          display: "block",
+        });
+      }, page);
+
+      return () => ctx.revert();
+    }
+  }, [hasMounted]);
+
+  if (!hasMounted) {
+    return null;
+  } else {
+    return (
+      <div ref={page}>
+        <Head>
+          <title>Andrey Mitko</title>
+          <meta
+            name="description"
+            content="Relevant education & experience, CV, Portfolio and other information related to Andrey Mitko"
+          />
+          <link rel="icon" href="/favicon.ico" />
+          <meta property="og:image" content="/og.png" />
+        </Head>
+        <Navbar
+          bgColor={
+            heroSectionInView
+              ? "white"
+              : aboutSectionInView
+              ? "lightblue"
+              : experienceSectionInView
+              ? "lightpink"
+              : portfolioSectionInView
+              ? "lightgreen"
+              : footerSectionInView
+              ? "white"
+              : "white"
+          }
         />
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:image" content="/og.png" />
-      </Head>
-      <Navbar
-        bgColor={
-          heroSectionInView
-            ? "white"
-            : aboutSectionInView
-            ? "lightblue"
-            : experienceSectionInView
-            ? "lightpink"
-            : portfolioSectionInView
-            ? "lightgreen"
-            : footerSectionInView
-            ? "white"
-            : "white"
-        }
-      />
-      <main id="main-content">
-        <div ref={heroSectionRef}>
-          <HeroSection />
+        <main id="main-content">
+          <div ref={heroSectionRef}>
+            <HeroSection />
+          </div>
+          <div id="about" ref={aboutSectionRef}>
+            <AboutSection />
+          </div>
+          <div id="experience" ref={experienceSectionRef}>
+            <ExperienceSection />
+          </div>
+          <div id="portfolio" ref={portfolioSectionRef}>
+            <PortfolioSection />
+          </div>
+        </main>
+        <div className="footer" id="contact" ref={footerSectionRef}>
+          <FooterSection />
         </div>
-        <div id="about" ref={aboutSectionRef}>
-          <AboutSection />
-        </div>
-        <div id="experience" ref={experienceSectionRef}>
-          <ExperienceSection />
-        </div>
-        <div id="portfolio" ref={portfolioSectionRef}>
-          <PortfolioSection />
-        </div>
-      </main>
-      <div className="footer" id="contact" ref={footerSectionRef}>
-        <FooterSection />
       </div>
-    </div>
-  );
+    );
+  }
 };
-// };
 
 export default Home;
