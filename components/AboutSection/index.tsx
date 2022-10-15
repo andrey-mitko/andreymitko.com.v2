@@ -21,7 +21,7 @@ const AboutSection = (props: Props) => {
         scrollTrigger: {
           trigger: ".section-title",
           start: "-100% 55%",
-          markers: false,
+          markers: true,
         },
         delay: 0.25,
         duration: 1.5,

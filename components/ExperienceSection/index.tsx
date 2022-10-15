@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
   ExperienceWrapper,
   ContentWrapper,
@@ -10,6 +10,7 @@ import { SectionTitle } from "../../styles/styles";
 import ExperienceCell from "./ExperienceCell";
 import { Experience } from "../../utils/types";
 import StyledLink from "../StyledLink";
+import { gsap } from "gsap";
 
 type Props = {};
 
@@ -32,12 +33,38 @@ const ExperienceSection = (props: Props) => {
       period: "Jun 2020  — Nov 2022",
     },
   ];
+  const comp = useRef<HTMLDivElement | null>(null);
 
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.set(".animate-appear", { opacity: 0, y: 48 });
+      gsap.to(".animate-appear", {
+        scrollTrigger: {
+          trigger: ".section-title",
+          start: "-15% 55%",
+          markers: true,
+        },
+        delay: 0.25,
+        duration: 1.5,
+        opacity: 1,
+        y: 0,
+        ease: "power3.out",
+        stagger: {
+          axis: "x",
+          amount: 0.25,
+        },
+      });
+    }, comp);
+
+    return () => ctx.revert();
+  }, []);
   return (
-    <ExperienceWrapper>
+    <ExperienceWrapper ref={comp}>
       <div className="container">
-        <SectionTitle color="pink">Experience</SectionTitle>
-        <ContentWrapper>
+        <SectionTitle className="section-title animate-appear" color="pink">
+          Experience
+        </SectionTitle>
+        <ContentWrapper className="animate-appear">
           {experiences.map((experience, index) => {
             return <ExperienceCell key={index} experience={experience} />;
           })}
