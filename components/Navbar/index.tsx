@@ -69,6 +69,9 @@ const Navbar = (props: Props) => {
           "#mobile-menu"
         ) as HTMLDivElement)!.style.visibility = "visible";
       });
+      tl.to([".nav-title"], {
+        clearProps: "all",
+      });
       tl.to([".nav-links"], {
         delay: 0,
         duration: 1,
@@ -91,6 +94,7 @@ const Navbar = (props: Props) => {
             href="/#"
             $isMobileMenuOpen={isMobileMenuOpen}
             className="noselect nav-title"
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             Andrey Mitko
           </Title>
