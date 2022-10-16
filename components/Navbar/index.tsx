@@ -48,8 +48,14 @@ const Navbar = (props: Props) => {
     let ctx = gsap.context(() => {
       var tl = gsap.timeline();
       tl.set(".nav-content", { y: "44vh" });
-      tl.set(".nav-title", { opacity: 1, color: "var(--color-purple)" });
+      tl.set(".nav-title", { display: "none" });
       tl.set(".nav-links", { opacity: 0 });
+      tl.set(".nav-title", {
+        display: "block",
+        delay: 0.25,
+        color: "var(--color-purple)",
+      });
+
       tl.to([".nav-content", ".nav-title"], {
         delay: 1,
         duration: 2,
