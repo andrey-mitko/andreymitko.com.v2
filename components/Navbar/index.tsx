@@ -52,7 +52,7 @@ const Navbar = (props: Props) => {
       tl.set(".nav-links", { opacity: 0 });
       tl.set(".nav-title", {
         display: "block",
-        delay: 0.25,
+        delay: 0,
         color: "var(--color-purple)",
       });
 

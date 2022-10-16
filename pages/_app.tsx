@@ -5,10 +5,14 @@ import "remixicon/fonts/remixicon.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Script from "next/script";
+import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    document.documentElement.style.visibility = "visible";
+  }, []);
   return (
     <>
       <Script
