@@ -41,7 +41,7 @@ const ExperienceSection = (props: Props) => {
       gsap.to(".animate-appear", {
         scrollTrigger: {
           trigger: ".section-title",
-          start: "-25% 55%",
+          start: "-25% 65%",
           markers: false,
         },
         delay: 0.25,

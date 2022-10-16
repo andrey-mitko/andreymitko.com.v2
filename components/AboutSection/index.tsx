@@ -20,7 +20,7 @@ const AboutSection = (props: Props) => {
       gsap.to(".animate-appear", {
         scrollTrigger: {
           trigger: ".section-title",
-          start: "-100% 55%",
+          start: "-100% 65%",
           markers: false,
         },
         delay: 0.25,

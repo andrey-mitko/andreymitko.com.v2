@@ -9,8 +9,8 @@ export const PortfolioWrapper = styled(Section)`
   background-color: var(--color-lightgreen);
 
   @media (min-width: ${ScreenSizes.desktop}) {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 140px;
+    padding-bottom: 140px;
   }
 `;
 
