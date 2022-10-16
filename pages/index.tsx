@@ -41,8 +41,15 @@ const Home: NextPage = () => {
     if (hasMounted) {
       let ctx = gsap.context(() => {
         var tl = gsap.timeline();
-        tl.set("#main-content", { opacity: 0, display: "none" });
-        tl.set(".footer", { opacity: 0, display: "none" });
+        tl.set("#main-content", {
+          opacity: 0,
+          visibility: "hidden",
+        });
+        tl.set(".footer", {
+          opacity: 0,
+          visibility: "hidden",
+        });
+
         tl.to(["#main-content", ".footer"], {
           delay: 1,
           duration: 1,
@@ -50,7 +57,10 @@ const Home: NextPage = () => {
         });
         tl.to(["#main-content", ".footer"], {
           delay: 1,
-          display: "block",
+          visibility: "visible",
+        });
+        tl.add(() => {
+          document.body.style.overflowY = "unset";
         });
       }, page);
 
