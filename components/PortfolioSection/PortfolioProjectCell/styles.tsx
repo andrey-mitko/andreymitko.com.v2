@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ScreenSizes from "../../../utils/mediaVariables";
 
 export const CellWrapper = styled.div`
-  width: 100%;
+  height: 100%;
   cursor: pointer;
 
   @media (min-width: ${ScreenSizes.tablet}) {
