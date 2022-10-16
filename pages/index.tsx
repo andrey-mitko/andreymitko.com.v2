@@ -60,7 +60,7 @@ const Home: NextPage = () => {
           visibility: "visible",
         });
         tl.add(() => {
-          document.body.style.overflowY = "unset";
+          document.body.style.overflow = "unset";
         });
       }, page);
 

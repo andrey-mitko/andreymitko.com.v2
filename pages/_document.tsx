@@ -12,7 +12,7 @@ export default function Document() {
         />
         <link rel="stylesheet" href="https://use.typekit.net/vvq7ghc.css" />
       </Head>
-      <body style={{ overflowY: "hidden" }}>
+      <body style={{ overflow: "hidden" }}>
         <Main />
         <NextScript />
       </body>

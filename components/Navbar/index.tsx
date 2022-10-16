@@ -64,6 +64,11 @@ const Navbar = (props: Props) => {
         ease: "power3.out",
         color: "var(--color-black100)",
       });
+      tl.add(() => {
+        (document.querySelector(
+          "#mobile-menu"
+        ) as HTMLDivElement)!.style.visibility = "visible";
+      });
       tl.to([".nav-links"], {
         delay: 0,
         duration: 1,
@@ -116,7 +121,11 @@ const Navbar = (props: Props) => {
           </NavigationWrapper>
         </NavContent>
       </NavWrapper>
-      <MobileMenu $isMobileMenuOpen={isMobileMenuOpen}>
+      <MobileMenu
+        id="mobile-menu"
+        style={{ visibility: "hidden" }}
+        $isMobileMenuOpen={isMobileMenuOpen}
+      >
         <MobileMenuLinksWrapper>
           {navigationItems.map((item, index) => (
             <MobileMenuLink
