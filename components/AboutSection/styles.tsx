@@ -28,7 +28,7 @@ export const AboutWrapper = styled(Section)`
   }
 `;
 
-export const FeatureText = styled.h4`
+export const FeatureText = styled.h3`
   font-size: 20px;
   font-weight: 500;
   line-height: 1.5;

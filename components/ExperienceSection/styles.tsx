@@ -67,7 +67,7 @@ export const StyledArrowRight = styled.i`
   margin-left: 4px;
 `;
 
-export const OpenToWorkText = styled.h6`
+export const OpenToWorkText = styled.h5`
   color: var(--color-black70);
   font-size: 16px;
   display: none;
@@ -77,7 +77,7 @@ export const OpenToWorkText = styled.h6`
   }
 `;
 
-export const OpenToWorkTextMobile = styled.h6`
+export const OpenToWorkTextMobile = styled.h5`
   color: var(--color-black70);
   font-size: 16px;
   display: block;

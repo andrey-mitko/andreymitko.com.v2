@@ -36,7 +36,7 @@ export const ContentWrapper = styled.div`
   margin-top: 24px;
 `;
 
-export const TitleText = styled.h5`
+export const TitleText = styled.h4`
   line-height: 1.2;
   font-weight: 600;
   font-size: 20px;
