@@ -57,7 +57,7 @@ const Navbar = (props: Props) => {
       });
 
       tl.to([".nav-content", ".nav-title"], {
-        delay: 1,
+        delay: 0.75,
         duration: 2,
         opacity: 1,
         y: 0,

@@ -2,11 +2,13 @@ import styled from "styled-components";
 import ScreenSizes from "../../../utils/mediaVariables";
 
 export const CellWrapper = styled.div`
-  height: 100%;
+  width: 100%;
   cursor: pointer;
 
   @media (min-width: ${ScreenSizes.tablet}) {
     /* max-width: 298px; */
+    width: unset;
+    height: 100%;
   }
   @media (min-width: ${ScreenSizes.laptop}) and (hover: hover) {
     :hover {
