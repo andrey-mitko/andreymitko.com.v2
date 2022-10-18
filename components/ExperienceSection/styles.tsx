@@ -8,7 +8,7 @@ export const ExperienceWrapper = styled(Section)`
   background-color: var(--color-lightpink);
 
   @media (min-width: ${ScreenSizes.desktop}) {
-    height: 100vh;
+    height: 92vh;
     padding-top: 0px;
     padding-bottom: 0px;
     .container {
