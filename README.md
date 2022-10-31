@@ -1,6 +1,6 @@
 <h1 align="center">Andrey's Personal Website</h1>
 
-<p align="center">Relevant education & experience, CV, Portfolio and other information related to Andrey Mitko</p>
+<p align="center">Relevant education & experience, CV, portfolio and other information related to Andrey Mitko</p>
 
 ## 🔗 Links
 
