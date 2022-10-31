@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Script from "next/script";
 import { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,6 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Script>
       <GlobalStyle />
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 }
