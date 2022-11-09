@@ -35,7 +35,7 @@ const PortfolioSection = (props: Props) => {
       title: "Tabager — Manage Web Tabs",
       subtitle: "Product Design, Web Development",
       image: TabagerImage,
-      url: "https://www.tabager.com",
+      url: "https://www.tabager.com/register",
     },
     {
       title: "Zonlo — Internships Across UK",
