@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ScreenSizes from "../../../utils/mediaVariables";
+import ScreenSizes from "../../../../utils/mediaVariables";
 
 export const CellWrapper = styled.div`
   width: 100%;

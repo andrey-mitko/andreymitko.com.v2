@@ -12,7 +12,7 @@ import {
   NavContent,
 } from "./styles";
 import { Slant as Hamburger } from "hamburger-react";
-import { NavItem } from "../../utils/types";
+import { NavItem } from "../../../utils/types";
 import { gsap } from "gsap";
 
 type Props = {

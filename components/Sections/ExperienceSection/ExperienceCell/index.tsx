@@ -1,5 +1,5 @@
 import React from "react";
-import { Experience } from "../../../utils/types";
+import { Experience } from "../../../../utils/types";
 import {
   CellWrapper,
   ContentWrapper,

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Section } from "../../styles/styles";
-import ScreenSizes from "../../utils/mediaVariables";
-import { SectionTitle } from "../../styles/styles";
+import { Section } from "../../../styles/styles";
+import ScreenSizes from "../../../utils/mediaVariables";
+import { SectionTitle } from "../../../styles/styles";
 
 export const PortfolioWrapper = styled(Section)`
   padding-top: 112px;

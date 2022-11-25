@@ -6,7 +6,7 @@ import {
   FeaturesWrapper,
   ContentWrapper,
 } from "./styles";
-import { SectionTitle } from "../../styles/styles";
+import { SectionTitle } from "../../../styles/styles";
 import { gsap } from "gsap";
 
 type Props = {};

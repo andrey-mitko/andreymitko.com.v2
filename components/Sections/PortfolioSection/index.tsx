@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { PortfolioWrapper, ContentWrapper, StyledSectionTitle } from "./styles";
-import { PortfolioProject } from "../../utils/types";
+import { PortfolioProject } from "../../../utils/types";
 import PortfolioProjectCell from "./PortfolioProjectCell";
-import TabagerImage from "../../public/portfolio/tabager.png";
-import JoePeshallImage from "../../public/portfolio/joepeshall.png";
-import DriftImage from "../../public/portfolio/drift.png";
-import SpringImage from "../../public/portfolio/byspring.png";
-import ZonloImage from "../../public/portfolio/zonlo.png";
+import TabagerImage from "../../../public/portfolio/tabager.png";
+import JoePeshallImage from "../../../public/portfolio/joepeshall.png";
+import DriftImage from "../../../public/portfolio/drift.png";
+import SpringImage from "../../../public/portfolio/byspring.png";
+import ZonloImage from "../../../public/portfolio/zonlo.png";
 import { gsap } from "gsap";
 type Props = {};
 

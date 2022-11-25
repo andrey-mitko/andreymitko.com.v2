@@ -3,12 +3,12 @@ import Head from "next/head";
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { gsap } from "gsap";
-import Navbar from "../components/Navbar";
-import HeroSection from "../components/HeroSection";
-import AboutSection from "../components/AboutSection";
-import ExperienceSection from "../components/ExperienceSection";
-import PortfolioSection from "../components/PortfolioSection";
-import FooterSection from "../components/FooterSection";
+import Navbar from "../components/Elements/Navbar";
+import HeroSection from "../components/Sections/HeroSection";
+import AboutSection from "../components/Sections/AboutSection";
+import ExperienceSection from "../components/Sections/ExperienceSection";
+import PortfolioSection from "../components/Sections/PortfolioSection";
+import FooterSection from "../components/Sections/FooterSection";
 
 const Home: NextPage = () => {
   const [hasMounted, setHasMounted] = useState(false);

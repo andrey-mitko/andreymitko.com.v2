@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Section } from "../../styles/styles";
-import ScreenSizes from "../../utils/mediaVariables";
+import { Section } from "../../../styles/styles";
+import ScreenSizes from "../../../utils/mediaVariables";
 
 export const FooterWrapper = styled(Section)`
   padding-top: 112px;

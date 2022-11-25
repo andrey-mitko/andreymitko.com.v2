@@ -9,8 +9,8 @@ import {
   FooterText,
   FooterBr,
 } from "./styles";
-import { SocialMediaItem } from "../../utils/types";
-import ContactForm from "../ContactForm";
+import { SocialMediaItem } from "../../../utils/types";
+import ContactForm from "../../Elements/ContactForm";
 
 type Props = {};
 

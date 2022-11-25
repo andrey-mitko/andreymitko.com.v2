@@ -1,5 +1,5 @@
 import React from "react";
-import { PortfolioProject } from "../../../utils/types";
+import { PortfolioProject } from "../../../../utils/types";
 import {
   CellWrapper,
   ContentWrapper,
@@ -9,7 +9,7 @@ import {
   LinkWrapper,
 } from "./styles";
 import Image from "next/image";
-import StyledLink from "../../StyledLink";
+import StyledLink from "../../../Elements/StyledLink";
 
 type Props = {
   project: PortfolioProject;

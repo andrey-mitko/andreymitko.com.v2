@@ -6,10 +6,10 @@ import {
   OpenToWorkText,
   OpenToWorkTextMobile,
 } from "./styles";
-import { SectionTitle } from "../../styles/styles";
+import { SectionTitle } from "../../../styles/styles";
 import ExperienceCell from "./ExperienceCell";
-import { Experience } from "../../utils/types";
-import StyledLink from "../StyledLink";
+import { Experience } from "../../../utils/types";
+import StyledLink from "../../Elements/StyledLink";
 import { gsap } from "gsap";
 
 type Props = {};

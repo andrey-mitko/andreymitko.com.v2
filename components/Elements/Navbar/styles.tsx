@@ -1,6 +1,6 @@
 import styled from "styled-components";
 const navbarTransitions = "all 0.2s ease-in-out";
-import ScreenSizes from "../../utils/mediaVariables";
+import ScreenSizes from "../../../utils/mediaVariables";
 
 export const NavWrapper = styled.div`
   z-index: 3;
