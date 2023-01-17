@@ -55,8 +55,9 @@ const AboutSection = (props: Props) => {
             </FeatureText>
           </FeaturesWrapper>
           <AboutText className="animate-appear">
-            Self-taught Web (Full-Stack) & iOS Developer with a strong knowledge
-            of JavaScript, Swift, Git and design in Figma and Sketch. <br />
+            Self-taught software developer with a strong knowledge of
+            TypeScript, JavaScript, Python and Swift.
+            <br />
             <br /> An International Baccalaureate graduate from Leysin American
             School in Switzerland, I am currently pursuing a Bachelor of
             Business Administration in London, UK.
