@@ -53,7 +53,7 @@ const Navbar = (props: Props) => {
       tl.set(".nav-title", {
         display: "block",
         delay: 0,
-        color: "var(--color-purple)",
+        color: "var(--colors-purple)",
       });
 
       tl.to([".nav-content", ".nav-title"], {
@@ -62,7 +62,7 @@ const Navbar = (props: Props) => {
         opacity: 1,
         y: 0,
         ease: "power3.out",
-        color: "var(--color-black100)",
+        color: "var(--colors-black100)",
       });
       tl.add(() => {
         (document.querySelector(
@@ -88,11 +88,16 @@ const Navbar = (props: Props) => {
       <NavWrapper
         color={isMobileMenuOpen ? "lightpurple" : props.bgColor}
         ref={comp}
+        css={{
+          backgroundColor: props.bgColor
+            ? `var(--colors-${props.bgColor})`
+            : "white",
+        }}
       >
         <NavContent className="nav-content">
           <Title
             href="/#"
-            $isMobileMenuOpen={isMobileMenuOpen}
+            mobileMenuOpen={isMobileMenuOpen}
             className="noselect nav-title"
             onClick={() => setIsMobileMenuOpen(false)}
           >
@@ -108,8 +113,8 @@ const Navbar = (props: Props) => {
                 toggle={setIsMobileMenuOpen}
                 color={
                   isMobileMenuOpen
-                    ? "var(--color-purple)"
-                    : "var(--color-black100)"
+                    ? "var(--colors-purple)"
+                    : "var(--colors-black100)"
                 }
               />
             </HamburgerWrapper>
@@ -128,15 +133,15 @@ const Navbar = (props: Props) => {
       <MobileMenu
         id="mobile-menu"
         style={{ visibility: "hidden" }}
-        $isMobileMenuOpen={isMobileMenuOpen}
+        mobileMenuOpen={isMobileMenuOpen}
       >
         <MobileMenuLinksWrapper>
           {navigationItems.map((item, index) => (
             <MobileMenuLink
               onClick={() => setIsMobileMenuOpen(false)}
               key={index}
-              $order={index + 1}
-              $isMobileMenuOpen={isMobileMenuOpen}
+              css={{ animationDelay: `${index * 100}ms` }}
+              mobileMenuOpen={isMobileMenuOpen}
               href={item.url}
             >
               {" "}
@@ -146,7 +151,7 @@ const Navbar = (props: Props) => {
         </MobileMenuLinksWrapper>
 
         <div style={{ opacity: 0.7 }}>
-          <ThankYouText $isMobileMenuOpen={isMobileMenuOpen}>
+          <ThankYouText mobileMenuOpen={isMobileMenuOpen}>
             Thank you for visiting my website!
           </ThankYouText>
         </div>

@@ -6,7 +6,7 @@ import {
   FeaturesWrapper,
   ContentWrapper,
 } from "./styles";
-import { SectionTitle } from "../../../styles/styles";
+import { SectionTitle } from "@/stitches.config";
 import { gsap } from "gsap";
 
 type Props = {};
@@ -41,7 +41,7 @@ const AboutSection = (props: Props) => {
   return (
     <AboutWrapper ref={comp}>
       <div className="container">
-        <SectionTitle className="section-title animate-appear" color="blue">
+        <SectionTitle className="section-title animate-appear">
           About
         </SectionTitle>
 

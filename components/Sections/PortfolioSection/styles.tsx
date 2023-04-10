@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Section } from "../../../styles/styles";
+import { Section } from "@/stitches.config";
 import ScreenSizes from "../../../utils/mediaVariables";
-import { SectionTitle } from "../../../styles/styles";
+import { SectionTitle } from "@/stitches.config";
 
 export const PortfolioWrapper = styled(Section)`
   padding-top: 112px;

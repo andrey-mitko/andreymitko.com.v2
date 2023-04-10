@@ -6,7 +6,7 @@ import {
   OpenToWorkText,
   OpenToWorkTextMobile,
 } from "./styles";
-import { SectionTitle } from "../../../styles/styles";
+import { SectionTitle } from "@/stitches.config";
 import ExperienceCell from "./ExperienceCell";
 import { Experience } from "../../../utils/types";
 import StyledLink from "../../Elements/StyledLink";
@@ -61,7 +61,14 @@ const ExperienceSection = (props: Props) => {
   return (
     <ExperienceWrapper ref={comp}>
       <div className="container">
-        <SectionTitle className="section-title animate-appear" color="pink">
+        <SectionTitle
+          className="section-title animate-appear"
+          css={{
+            "&::after": {
+              backgroundColor: "var(--colors-pink)",
+            },
+          }}
+        >
           Experience
         </SectionTitle>
         <ContentWrapper className="animate-appear">

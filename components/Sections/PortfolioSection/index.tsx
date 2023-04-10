@@ -76,7 +76,11 @@ const PortfolioSection = (props: Props) => {
       <div className="container">
         <StyledSectionTitle
           className="section-title animate-appear"
-          color="green"
+          css={{
+            "&::after": {
+              backgroundColor: "var(--colors-green)",
+            },
+          }}
         >
           Portfolio
         </StyledSectionTitle>

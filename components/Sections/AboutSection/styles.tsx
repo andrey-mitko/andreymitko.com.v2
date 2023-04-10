@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Section } from "../../../styles/styles";
+import { Section } from "@/stitches.config";
 import ScreenSizes from "../../../utils/mediaVariables";
 
 export const AboutWrapper = styled(Section)`
