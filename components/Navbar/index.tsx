@@ -20,7 +20,7 @@ type Props = {
 };
 
 const Navbar = (props: Props) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // MARK: - Navigation Data
   const navigationItems: NavItem[] = [
@@ -86,20 +86,21 @@ const Navbar = (props: Props) => {
   return (
     <>
       <NavWrapper
-        color={isMobileMenuOpen ? "lightpurple" : props.bgColor}
         ref={comp}
         css={{
-          backgroundColor: props.bgColor
-            ? `var(--colors-${props.bgColor})`
+          backgroundColor: mobileMenuOpen
+            ? "$lightpurple"
+            : props.bgColor
+            ? `$${props.bgColor}`
             : "white",
         }}
       >
         <NavContent className="nav-content">
           <Title
             href="/#"
-            mobileMenuOpen={isMobileMenuOpen}
+            mobileMenuOpen={mobileMenuOpen}
             className="noselect nav-title"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={() => setMobileMenuOpen(false)}
           >
             Andrey Mitko
           </Title>
@@ -109,10 +110,10 @@ const Navbar = (props: Props) => {
                 distance="sm"
                 duration={0.3}
                 size={24}
-                toggled={isMobileMenuOpen}
-                toggle={setIsMobileMenuOpen}
+                toggled={mobileMenuOpen}
+                toggle={setMobileMenuOpen}
                 color={
-                  isMobileMenuOpen
+                  mobileMenuOpen
                     ? "var(--colors-purple)"
                     : "var(--colors-black100)"
                 }
@@ -120,7 +121,7 @@ const Navbar = (props: Props) => {
             </HamburgerWrapper>
             {navigationItems.map((item, index) => (
               <StandardMenuLink
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => setMobileMenuOpen(false)}
                 key={index}
                 href={item.url}
               >
@@ -133,15 +134,15 @@ const Navbar = (props: Props) => {
       <MobileMenu
         id="mobile-menu"
         style={{ visibility: "hidden" }}
-        mobileMenuOpen={isMobileMenuOpen}
+        mobileMenuOpen={mobileMenuOpen}
       >
         <MobileMenuLinksWrapper>
           {navigationItems.map((item, index) => (
             <MobileMenuLink
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => setMobileMenuOpen(false)}
               key={index}
               css={{ animationDelay: `${index * 100}ms` }}
-              mobileMenuOpen={isMobileMenuOpen}
+              mobileMenuOpen={mobileMenuOpen}
               href={item.url}
             >
               {" "}
@@ -151,7 +152,7 @@ const Navbar = (props: Props) => {
         </MobileMenuLinksWrapper>
 
         <div style={{ opacity: 0.7 }}>
-          <ThankYouText mobileMenuOpen={isMobileMenuOpen}>
+          <ThankYouText mobileMenuOpen={mobileMenuOpen}>
             Thank you for visiting my website!
           </ThankYouText>
         </div>
