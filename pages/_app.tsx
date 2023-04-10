@@ -9,7 +9,7 @@ import { globalStyles } from "../stitches.config";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     document.documentElement.style.visibility = "visible";
   }, []);
@@ -42,4 +42,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;

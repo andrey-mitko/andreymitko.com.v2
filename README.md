@@ -9,7 +9,7 @@
 ## 🛠 Built With
 
 - TypeScript
-- Styled Components
+- Stitches
 - Formik
 - Next.js
 - React.js

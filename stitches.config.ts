@@ -107,7 +107,6 @@ const resetCss = {
       background: "transparent",
       border: 0,
       fontSize: "100%",
-      font: "inherit",
       margin: 0,
       outline: "none",
       padding: 0,
@@ -117,7 +116,6 @@ const resetCss = {
       zIndex: 1,
       color: "unset",
     },
-  "a:link,a:visited,a:hover,a:active": { textDecoration: "none" },
 
   /* Miscellaneous resets */
   body: { lineHeight: 1 },
@@ -156,7 +154,6 @@ export const globalStyles = globalCss({
 });
 
 //MARK: Components that are reused throughout the app
-
 export const Section = styled("div", {
   padding: "0 24px 0 24px",
   "@tablet": {
