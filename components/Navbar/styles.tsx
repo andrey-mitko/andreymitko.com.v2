@@ -132,7 +132,6 @@ export const MobileMenuLink = styled("a", {
 
 export const Title = styled("a", {
   zIndex: 3,
-  fontSize: "20px",
   fontWeight: 500,
   fontFamily: "$lato",
   cursor: "pointer",
@@ -163,7 +162,6 @@ export const HamburgerWrapper = styled("div", {
 export const StandardMenuLink = styled("a", {
   display: "none",
   fontWeight: 400,
-  fontSize: "20px",
   "@tablet": {
     display: "block",
   },

@@ -6,10 +6,10 @@ import ExperienceCell from "./ExperienceCell";
 import { SectionTitle } from "@/stitches.config";
 import {
   ExperienceWrapper,
-  ContentWrapper,
+  ContentContainer,
+  ExperiencesList,
   MoreInfoWrapper,
   OpenToWorkText,
-  OpenToWorkTextMobile,
 } from "./styles";
 
 const ExperienceSection = () => {
@@ -40,7 +40,7 @@ const ExperienceSection = () => {
   }, []);
   return (
     <ExperienceWrapper ref={comp}>
-      <div className="container">
+      <ContentContainer>
         <SectionTitle
           className="section-title animate-appear"
           css={{
@@ -51,18 +51,17 @@ const ExperienceSection = () => {
         >
           Experience
         </SectionTitle>
-        <ContentWrapper className="animate-appear">
+        <ExperiencesList className="animate-appear">
           {experiences.map((experience, index) => {
             return <ExperienceCell key={index} experience={experience} />;
           })}
 
           <MoreInfoWrapper>
-            <OpenToWorkText>* Currently open for work! </OpenToWorkText>
-            <OpenToWorkTextMobile>* Open for Work! </OpenToWorkTextMobile>
+            <OpenToWorkText>* Open for Work! </OpenToWorkText>
             <StyledLink href="/resume.pdf" title="EXPLORE FULL CV" />
           </MoreInfoWrapper>
-        </ContentWrapper>
-      </div>
+        </ExperiencesList>
+      </ContentContainer>
     </ExperienceWrapper>
   );
 };

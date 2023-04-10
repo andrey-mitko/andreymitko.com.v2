@@ -1,14 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import {
-  HeroText,
-  HeroWrapper,
-  BlueText,
-  PinkText,
-  GreenText,
-  OrangeText,
-  StyledArrowUp,
-} from "./styles";
+import { HeroWrapper, HeroText, ColouredText, StyledArrowUp } from "./styles";
 
 const HeroSection = () => {
   const comp = useRef<HTMLDivElement | null>(null); // create a ref for the root level element (for scoping)
@@ -35,11 +27,11 @@ const HeroSection = () => {
     <>
       <HeroWrapper ref={comp}>
         <HeroText className="hero-text">
-          I am a <BlueText>cr</BlueText>
-          <PinkText>ea</PinkText>
-          <GreenText>ti</GreenText>
-          <OrangeText>ve</OrangeText> software developer currently based in
-          London, UK
+          I am a <ColouredText type="blue">cr</ColouredText>
+          <ColouredText type="pink">ea</ColouredText>
+          <ColouredText type="green">ti</ColouredText>
+          <ColouredText type="orange">ve</ColouredText> software developer
+          currently based in London, UK
         </HeroText>
       </HeroWrapper>
       <StyledArrowUp className="ri-arrow-up-line"></StyledArrowUp>

@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { SectionTitle } from "@/stitches.config";
 import {
   AboutWrapper,
+  ContentContainer,
   FeatureText,
   AboutText,
   FeaturesWrapper,
@@ -38,7 +39,7 @@ const AboutSection = () => {
 
   return (
     <AboutWrapper ref={comp}>
-      <div className="container">
+      <ContentContainer>
         <SectionTitle className="section-title animate-appear">
           About
         </SectionTitle>
@@ -64,7 +65,7 @@ const AboutSection = () => {
             and studying in an international environment.
           </AboutText>
         </ContentWrapper>
-      </div>
+      </ContentContainer>
     </AboutWrapper>
   );
 };

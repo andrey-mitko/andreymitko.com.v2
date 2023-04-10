@@ -1,70 +1,56 @@
-import styled from "styled-components";
-import { Section } from "@/stitches.config";
-import ScreenSizes from "@/utils/mediaVariables";
+import { styled, Section } from "@/stitches.config";
 
-export const ExperienceWrapper = styled(Section)`
-  padding-top: 112px;
-  padding-bottom: 136px;
-  background-color: var(--color-lightpink);
+export const ExperienceWrapper = styled(Section, {
+  paddingTop: "112px",
+  paddingBottom: "136px",
+  backgroundColor: "$lightpink",
 
-  @media (min-width: ${ScreenSizes.desktop}) {
-    height: 92vh;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    .container {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-`;
+  "@desktop": {
+    height: "92vh",
+    paddingY: "0px",
+  },
+});
 
-export const ContentWrapper = styled.div`
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: baseline;
-  row-gap: 40px;
+export const ContentContainer = styled("div", {
+  "@desktop": {
+    position: "relative",
+    top: "50%",
+    transform: "translateY(-50%)",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+});
 
-  @media (min-width: ${ScreenSizes.tablet}) {
-    margin-top: 56px;
-  }
+export const ExperiencesList = styled("div", {
+  marginTop: "48px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  alignItems: "baseline",
+  rowGap: "40px",
 
-  @media (min-width: ${ScreenSizes.desktop}) {
-    margin-top: 0px;
-    flex-grow: 1;
-    margin-left: 112px;
-  }
-`;
+  "@tablet": {
+    marginTop: "56px",
+  },
 
-export const MoreInfoWrapper = styled.div`
-  line-height: 1.2;
-  font-size: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 8px;
-`;
+  "@desktop": {
+    marginTop: "0px",
+    flexGrow: 1,
+    marginLeft: "112px",
+  },
+});
 
-export const OpenToWorkText = styled.h5`
-  color: var(--color-black70);
-  font-size: 16px;
-  display: none;
+export const MoreInfoWrapper = styled("div", {
+  lineHeight: "1.2",
+  width: "100%",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  paddingTop: "8px",
+});
 
-  @media (min-width: ${ScreenSizes.tablet}) {
-    display: block;
-  }
-`;
-
-export const OpenToWorkTextMobile = styled.h5`
-  color: var(--color-black70);
-  font-size: 16px;
-  display: block;
-  @media (min-width: ${ScreenSizes.tablet}) {
-    display: none;
-  }
-`;
+export const OpenToWorkText = styled("h5", {
+  color: "$black70",
+  fontSize: "16px",
+});

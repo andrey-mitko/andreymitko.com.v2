@@ -1,71 +1,86 @@
-import styled from "styled-components";
-import { Section } from "@/stitches.config";
-import ScreenSizes from "@/utils/mediaVariables";
+import { styled, Section, keyframes } from "@/stitches.config";
 
-export const HeroWrapper = styled(Section)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
+export const HeroWrapper = styled(Section, {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100vh",
+});
 
-export const HeroText = styled.h1`
-  font-family: var(--font-lora);
-  font-size: 37px;
-  font-weight: 600;
-  line-height: 1.25;
+const sharedTextStyles = {
+  fontFamily: "$lora",
+  fontSize: "36px",
+  fontWeight: "$semibold",
+  lineHeight: "1.25",
 
-  @media (min-width: ${ScreenSizes.tablet}) {
-    font-size: 48px;
-    width: 617px;
-  }
+  "@tablet": {
+    fontSize: "48px",
+  },
 
-  @media (min-width: ${ScreenSizes.desktop}) {
-    font-size: 56px;
-    width: 1073px;
-    text-align: center;
-  }
-`;
+  "@desktop": {
+    fontSize: "56px",
+  },
+};
 
-export const BlueText = styled.span`
-  color: var(--color-blue);
-`;
+export const HeroText = styled("h1", {
+  ...sharedTextStyles,
+  "@tablet": {
+    ...sharedTextStyles["@tablet"],
+    width: "617px",
+  },
 
-export const PinkText = styled.span`
-  color: var(--color-pink);
-`;
+  "@desktop": {
+    ...sharedTextStyles["@desktop"],
+    width: "1073px",
+    textAlign: "center",
+  },
+});
 
-export const GreenText = styled.span`
-  color: var(--color-green);
-`;
+export const ColouredText = styled("span", {
+  ...sharedTextStyles,
+  variants: {
+    type: {
+      blue: {
+        color: "$blue",
+      },
+      pink: {
+        color: "$pink",
+      },
+      green: {
+        color: "$green",
+      },
+      orange: {
+        color: "$orange",
+      },
+    },
+  },
+});
 
-export const OrangeText = styled.span`
-  color: var(--color-orange);
-`;
+const fadeMoveAnimation = keyframes({
+  "0%": { opacity: 0, transform: "translateY(0) translateX(-50%)" },
+  "100%": { opacity: 1, transform: "translateY(-0.75em) translateX(-50%)" },
+});
 
-export const StyledArrowUp = styled.i`
-  @keyframes fadeMoveAnimation {
-    100% {
-      opacity: 1;
-      transform: translateY(-0.75em) translateX(-50%);
-    }
-  }
+export const StyledArrowUp = styled("i", {
+  position: "absolute",
+  bottom: "40px",
+  left: "50%",
+  transform: "translateX(-50%)",
+  opacity: 0,
+  fontSize: "32px",
+  color: "$black50",
+  cursor: "pointer",
+  transition: "all 0.2s ease-in-out",
 
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  font-size: 30px;
-  color: var(--color-black50);
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  animation: fadeMoveAnimation 2.5s infinite alternate;
-  animation-delay: 1s;
-  animation-fill-mode: both;
+  animationName: `${fadeMoveAnimation}`,
+  animationDuration: "2.5s",
+  animationIterationCount: "infinite",
+  animationDirection: "alternate",
+  animationDelay: "1s",
+  animationFillMode: "both",
 
-  @media (min-width: ${ScreenSizes.desktop}) {
-    bottom: 56px;
-    font-size: 36px;
-  }
-`;
+  "@desktop": {
+    bottom: "56px",
+    fontSize: "36px",
+  },
+});

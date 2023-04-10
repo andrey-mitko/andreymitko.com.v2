@@ -46,23 +46,6 @@ export const {
       lato: lato.style.fontFamily,
       lora: lora.style.fontFamily,
     },
-    fontSizes: {
-      0: "14px",
-      2: "16px",
-      3: "24px",
-      4: "32px",
-      5: "40px",
-      6: "48px",
-      7: "56px",
-      8: "64px",
-      9: "72px",
-      10: "80px",
-      11: "88px",
-      12: "96px",
-      13: "104px",
-      14: "112px",
-      15: "120px",
-    },
     fontWeights: {
       light: 300,
       regular: 400,
@@ -78,6 +61,8 @@ export const {
     desktop: "(min-width: 1200px)",
   },
   utils: {
+    paddingX: (value: string) => ({ paddingLeft: value, paddingRight: value }),
+    paddingY: (value: string) => ({ paddingTop: value, paddingBottom: value }),
     marginX: (value: string) => ({ marginLeft: value, marginRight: value }),
     marginY: (value: string) => ({ marginTop: value, marginBottom: value }),
   },
@@ -133,7 +118,7 @@ export const globalStyles = globalCss({
   "*, a": {
     fontFamily: "$lato",
     color: "$black100",
-    fontSize: "$2",
+    fontSize: "20px",
     fontWeight: "$regular",
   },
 
@@ -158,21 +143,21 @@ export const Section = styled("div", {
   padding: "0 24px 0 24px",
   "@tablet": {
     padding: "0",
-    "& .container": {
+    "& > div:first-child ": {
       maxWidth: "715px",
       margin: "0 auto",
     },
   },
   "@laptop": {
     padding: "0",
-    "& .container": {
+    "& > div:first-child ": {
       maxWidth: "815px",
       margin: "0 auto",
     },
   },
   "@desktop": {
     padding: "0",
-    "& .container": {
+    "& > div:first-child ": {
       maxWidth: "1050px",
       margin: "0 auto",
     },
@@ -181,7 +166,7 @@ export const Section = styled("div", {
 
 export const SectionTitle = styled("h2", {
   fontFamily: "$lora",
-  fontSize: "$4",
+  fontSize: "32px",
   fontWeight: "$semibold",
   lineHeight: "1.2",
   "&::after": {
@@ -194,9 +179,6 @@ export const SectionTitle = styled("h2", {
     marginTop: "16px",
   },
   "@tablet": {
-    fontSize: "$5",
-  },
-  "@desktop": {
-    fontSize: "$6",
+    fontSize: "40px",
   },
 });
