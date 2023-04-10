@@ -9,18 +9,12 @@ export const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
-  /* Space Between Flex Items */
-  > :not(:first-child) {
-    margin-top: 16px;
-  }
+  row-gap: 16px;
 
   @media (min-width: ${ScreenSizes.tablet}) {
     flex-direction: row;
     align-items: center;
-    > :not(:first-child) {
-      margin-top: 0px;
-    }
+    row-gap: 0px;
   }
 `;
 
@@ -28,18 +22,12 @@ export const CompanyPeriodWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
-  /* Space Between Flex Items */
-  > :not(:first-child) {
-    margin-top: 16px;
-  }
+  row-gap: 16px;
 
   @media (min-width: ${ScreenSizes.tablet}) {
     flex-direction: row;
     width: 63%;
-    > :not(:first-child) {
-      margin-top: 0px;
-    }
+    row-gap: 0px;
   }
 `;
 

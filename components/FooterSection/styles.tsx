@@ -85,9 +85,9 @@ export const SocialMediaWrapper = styled.div<SocialMediaWrapperProps>`
       }
     }
     > :not(:first-child) {
-      margin-left: 12px;
       padding-left: 8px;
     }
+    column-gap: 12px;
   }
 `;
 

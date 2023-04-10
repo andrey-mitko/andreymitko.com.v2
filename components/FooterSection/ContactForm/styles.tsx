@@ -6,10 +6,7 @@ export const StyledForm = styled(Form)`
   width: 100%;
   flex-direction: column;
   align-items: baseline;
-  /* Space Between Flex Items */
-  > :not(:first-child) {
-    margin-top: 32px;
-  }
+  row-gap: 32px;
 `;
 
 interface SubmitButtonProps {

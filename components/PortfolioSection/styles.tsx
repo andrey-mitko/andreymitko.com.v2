@@ -40,11 +40,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
-
-  /* Space Between Flex Items */
-  > :not(:first-child) {
-    margin-top: 64px;
-  }
+  row-gap: 64px;
 
   @media (min-width: ${ScreenSizes.tablet}) {
     width: 100%;
@@ -52,16 +48,12 @@ export const ContentWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 76px;
-    > :not(:first-child) {
-      margin-top: 0px;
-    }
+    row-gap: 0px;
   }
 
   @media (min-width: ${ScreenSizes.desktop}) {
     grid-template-columns: repeat(3, 1fr);
     gap: 76px;
-    > :not(:first-child) {
-      margin-top: 0px;
-    }
+    row-gap: 0px;
   }
 `;

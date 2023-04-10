@@ -62,11 +62,7 @@ export const FeaturesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  /* Space Between Flex Items */
-  > :not(:first-child) {
-    margin-top: 28px;
-  }
+  row-gap: 28px;
 
   @media (min-width: ${ScreenSizes.tablet}) {
     min-width: 165px;

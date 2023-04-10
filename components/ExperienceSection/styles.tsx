@@ -28,11 +28,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
-
-  /* Space Between Flex Items */
-  > :not(:first-child) {
-    margin-top: 40px;
-  }
+  row-gap: 40px;
 
   @media (min-width: ${ScreenSizes.tablet}) {
     margin-top: 56px;
@@ -52,19 +48,6 @@ export const MoreInfoWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 8px;
-`;
-
-export const StyledLink = styled.a`
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 14px;
-`;
-
-export const StyledArrowRight = styled.i`
-  font-size: 16px;
-  margin-left: 4px;
 `;
 
 export const OpenToWorkText = styled.h5`
