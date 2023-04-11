@@ -85,7 +85,7 @@ export const SocialMediaWrapper = styled("div", {
   },
 
   variants: {
-    isLinkHover: {
+    linkHovered: {
       true: {
         "@tablet": {
           "> *": {

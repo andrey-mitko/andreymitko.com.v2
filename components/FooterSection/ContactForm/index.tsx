@@ -5,8 +5,8 @@ import Input from "./Input";
 import { StyledForm, SubmitButton } from "./styles";
 
 const ContactForm = () => {
-  const [isFormSubmitted, setIsFormSubmitted] = React.useState(false);
-  const [isFormSending, setIsFormSending] = React.useState(false);
+  const [formSubmitted, setFormSubmitted] = React.useState(false);
+  const [formSending, setFormSending] = React.useState(false);
 
   const schema = Yup.object().shape({
     name: Yup.string().required("Required field"),
@@ -25,7 +25,7 @@ const ContactForm = () => {
     { name, email, message }: FormValues,
     { resetForm }: any
   ) => {
-    setIsFormSending(true);
+    setFormSending(true);
     const formData = new FormData();
     formData.append("name", name);
     formData.append("email", email);
@@ -36,16 +36,16 @@ const ContactForm = () => {
       body: formData,
     })
       .then((response) => {
-        setIsFormSubmitted(true);
+        setFormSubmitted(true);
         resetForm();
       })
-      .catch((error) => setIsFormSubmitted(false));
+      .catch((error) => setFormSubmitted(false));
     console.log(name, email, message);
   };
 
   React.useEffect(() => {
-    setIsFormSending(false);
-  }, [isFormSubmitted]);
+    setFormSending(false);
+  }, [formSubmitted]);
 
   return (
     <Formik
@@ -83,14 +83,13 @@ const ContactForm = () => {
           />
 
           <SubmitButton
-            $isSubmitted={isFormSubmitted}
-            $isSending={isFormSending}
+            sendingOrSubmitted={formSending || formSubmitted}
             type="submit"
-            disabled={isFormSubmitted || isFormSending}
+            disabled={formSubmitted || formSending}
           >
-            {isFormSending
+            {formSending
               ? "Sending..."
-              : isFormSubmitted
+              : formSubmitted
               ? "Thank you!"
               : "Contact"}
           </SubmitButton>

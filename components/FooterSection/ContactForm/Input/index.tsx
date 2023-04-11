@@ -8,7 +8,7 @@ const Input = ({ label, isTextArea, rows, ...props }: any) => {
     <FormFieldWrapper>
       <FormField
         component={isTextArea ? "textarea" : "input"}
-        $isError={meta.touched && meta.error !== undefined}
+        error={meta.touched && meta.error !== undefined}
         type="text"
         placeholder={props.placeholder}
         rows={isTextArea ? 5 : 1}

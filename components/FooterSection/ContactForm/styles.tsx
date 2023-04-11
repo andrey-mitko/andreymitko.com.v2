@@ -1,32 +1,32 @@
-import styled from "styled-components";
 import { Form } from "formik";
+import { styled } from "@/stitches.config";
 
-export const StyledForm = styled(Form)`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: baseline;
-  row-gap: 32px;
-`;
+export const StyledForm = styled(Form, {
+  display: "flex",
+  width: "100%",
+  flexDirection: "column",
+  alignItems: "baseline",
+  rowGap: "32px",
+});
 
-interface SubmitButtonProps {
-  $isSending: boolean;
-  $isSubmitted: boolean;
-}
+export const SubmitButton = styled("button", {
+  width: "100%",
+  height: "56px",
+  backgroundColor: "$black100",
+  color: "$white",
+  fontSize: "18px",
+  fontWeight: "$regular",
+  borderRadius: "8px",
+  cursor: "pointer",
+  textAlign: "center",
 
-export const SubmitButton = styled.button<SubmitButtonProps>`
-  width: 100%;
-  height: 56px;
-  background-color: ${(props: SubmitButtonProps) =>
-    props.$isSending || props.$isSubmitted
-      ? "var(--color-black20)"
-      : "var(--color-black100)"};
-  color: ${(props: SubmitButtonProps) =>
-    props.$isSending || props.$isSubmitted
-      ? "var(--color-black100)"
-      : "var(--color-white)"};
-  font-size: 20px;
-  font-weight: 400;
-  border-radius: 8px;
-  cursor: pointer;
-`;
+  variants: {
+    sendingOrSubmitted: {
+      true: {
+        backgroundColor: "$black20",
+        color: "$black100",
+        cursor: "default",
+      },
+    },
+  },
+});

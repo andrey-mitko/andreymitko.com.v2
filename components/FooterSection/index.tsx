@@ -13,7 +13,7 @@ import {
 } from "./styles";
 
 const FooterSection = () => {
-  const [isLinkHover, setIsLinkHover] = useState(false);
+  const [linkHovered, setLinkHovered] = useState(false);
 
   return (
     <FooterWrapper>
@@ -22,15 +22,15 @@ const FooterSection = () => {
         <ContactFromWrapper>
           <ContactForm />
         </ContactFromWrapper>
-        <SocialMediaWrapper isLinkHover={isLinkHover}>
+        <SocialMediaWrapper linkHovered={linkHovered}>
           {socialMediaLinks.map((item, index) => (
             <a
               href={item.url}
               target="_blank"
               rel="noreferrer"
               key={index}
-              onMouseOver={() => setIsLinkHover(true)}
-              onMouseOut={() => setIsLinkHover(false)}
+              onMouseOver={() => setLinkHovered(true)}
+              onMouseOut={() => setLinkHovered(false)}
             >
               <SocialMediaIcon
                 className={item.iconClass}
