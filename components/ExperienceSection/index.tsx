@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import experiences from "@/data/experiences";
 import StyledLink from "@/components/StyledLink";
@@ -14,6 +14,11 @@ import {
 
 const ExperienceSection = () => {
   const comp = useRef<HTMLDivElement | null>(null);
+  const [mobile, setMobile] = useState(true);
+
+  useEffect(() => {
+    setMobile(window.innerWidth < 768);
+  }, []);
 
   // This is the animation that runs when the section loads
   useEffect(() => {
@@ -39,7 +44,7 @@ const ExperienceSection = () => {
 
     return () => ctx.revert();
   }, []);
-  
+
   return (
     <ExperienceWrapper ref={comp}>
       <ContentContainer>
@@ -59,7 +64,9 @@ const ExperienceSection = () => {
           })}
 
           <MoreInfoWrapper>
-            <OpenToWorkText>* Currently open for work</OpenToWorkText>
+            <OpenToWorkText>
+              * {mobile ? "Open for work" : "Currently open for work"}
+            </OpenToWorkText>
             <StyledLink href="/resume.pdf" title="EXPLORE FULL CV" />
           </MoreInfoWrapper>
         </ExperiencesList>
