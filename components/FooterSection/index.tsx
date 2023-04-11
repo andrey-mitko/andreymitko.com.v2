@@ -22,7 +22,7 @@ const FooterSection = () => {
         <ContactFromWrapper>
           <ContactForm />
         </ContactFromWrapper>
-        <SocialMediaWrapper $isLinkHover={isLinkHover}>
+        <SocialMediaWrapper isLinkHover={isLinkHover}>
           {socialMediaLinks.map((item, index) => (
             <a
               href={item.url}
@@ -34,7 +34,7 @@ const FooterSection = () => {
             >
               <SocialMediaIcon
                 className={item.iconClass}
-                $fillColor={item.color}
+                css={{ color: `$${item.color}` }}
               />
             </a>
           ))}

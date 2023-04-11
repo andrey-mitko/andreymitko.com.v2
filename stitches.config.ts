@@ -59,6 +59,7 @@ export const {
     tablet: "(min-width: 768px)",
     laptop: "(min-width: 992px)",
     desktop: "(min-width: 1200px)",
+    hover: "(hover: hover)",
   },
   utils: {
     paddingX: (value: string) => ({ paddingLeft: value, paddingRight: value }),

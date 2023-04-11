@@ -1,127 +1,132 @@
-import styled from "styled-components";
-import { Section } from "@/stitches.config";
-import ScreenSizes from "@/utils/mediaVariables";
+import { styled, Section } from "@/stitches.config";
 
-export const FooterWrapper = styled(Section)`
-  padding-top: 112px;
-  padding-bottom: 69px;
-  background-color: var(--color-white);
+export const FooterWrapper = styled(Section, {
+  paddingTop: "112px",
+  paddingBottom: "69px",
+  backgroundColor: "$white",
 
-  @media (min-width: ${ScreenSizes.tablet}) {
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 36px;
-      grid-template-areas:
+  "@tablet": {
+    "& .container": {
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gap: "0 36px",
+      gridTemplateAreas: `
         "title contact"
         "socials contact"
         ". contact"
-        "footer contact";
-    }
-  }
+        "footer contact"
+      `,
+    },
+  },
 
-  @media (min-width: ${ScreenSizes.laptop}) {
-    .container {
-      gap: 0 40px;
-    }
+  "@laptop": {
+    "& .container": {
+      gap: "0 40px",
+    },
 
-    padding-top: 120px;
-    padding-bottom: 112px;
-  }
-`;
+    paddingTop: "120px",
+    paddingBottom: "112px",
+  },
+});
 
-export const ContactFromWrapper = styled.div`
-  grid-area: contact;
-  margin-top: 54px;
+export const ContactFromWrapper = styled("div", {
+  gridArea: "contact",
+  marginTop: "54px",
 
-  @media (min-width: ${ScreenSizes.tablet}) {
-    margin-top: 0px;
-  }
-`;
+  "@tablet": {
+    marginTop: "0px",
+  },
+});
 
-export const FooterTitle = styled.h2`
-  grid-area: title;
-  font-family: var(--font-lora);
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.2;
+export const FooterTitle = styled("h2", {
+  gridArea: "title",
+  fontFamily: "$lora",
+  fontSize: "28px",
+  fontWeight: 600,
+  lineHeight: "1.2",
 
-  @media (min-width: ${ScreenSizes.tablet}) {
-    font-size: 36px;
-  }
+  "@tablet": {
+    fontSize: "36px",
+  },
 
-  @media (min-width: ${ScreenSizes.desktop}) {
-    font-size: 40px;
-  }
-`;
+  "@laptop": {
+    fontSize: "40px",
+  },
+});
 
-interface SocialMediaWrapperProps {
-  $isLinkHover: boolean;
-}
+export const SocialMediaWrapper = styled("div", {
+  gridArea: "socials",
+  marginTop: "82px",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "baseline",
+  columnGap: "12px",
 
-export const SocialMediaWrapper = styled.div<SocialMediaWrapperProps>`
-  grid-area: socials;
-  margin-top: 82px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
+  "& > :not(:first-child)": {
+    paddingLeft: "8px",
+  },
 
-  @media (min-width: ${ScreenSizes.tablet}) {
-    margin-top: 24px;
-    width: fit-content;
+  "@tablet": {
+    marginTop: "24px",
+    width: "fit-content",
 
-    > * {
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 8px;
-      @media (hover: hover) {
-        opacity: ${(props: SocialMediaWrapperProps) =>
-          props.$isLinkHover ? "0.5" : "1"};
-        transition: all 0.25s ease-in-out;
-        :hover {
-          opacity: 1;
-        }
-      }
-    }
-    > :not(:first-child) {
-      padding-left: 8px;
-    }
-    column-gap: 12px;
-  }
-`;
+    "& > *": {
+      paddingY: "8px",
+      paddingRight: "8px",
+      "@hover": {
+        opacity: "1",
+        transition: "all 0.25s ease-in-out",
+        "&:hover": {
+          opacity: "1",
+        },
+      },
+    },
+  },
 
-interface SocialMediaProps {
-  $fillColor: string;
-}
+  variants: {
+    isLinkHover: {
+      true: {
+        "@tablet": {
+          "> *": {
+            "@hover": {
+              opacity: "0.5",
+            },
+          },
+        },
+      },
+    },
+  },
+});
 
-export const SocialMediaIcon = styled.i<SocialMediaProps>`
-  font-size: 40px;
-  color: ${(props: SocialMediaProps) => `var(--color-${props.$fillColor})`};
+export const SocialMediaIcon = styled("i", {
+  fontSize: "40px",
+  color: "$black70",
 
-  @media (min-width: ${ScreenSizes.tablet}) {
-    font-size: 36px;
-  }
-`;
+  "@tablet": {
+    fontSize: "36px",
+  },
+});
 
-export const StyledFooter = styled.footer`
-  grid-area: footer;
-  width: 100%;
-  margin-top: 60px;
-  text-align: center;
-  color: var(--color-black70);
-  @media (min-width: ${ScreenSizes.tablet}) {
-    text-align: left;
-  }
-`;
+export const StyledFooter = styled("footer", {
+  gridArea: "footer",
+  width: "100%",
+  marginTop: "60px",
+  color: "$black70",
+});
 
-export const FooterBr = styled.br`
-  @media (min-width: ${ScreenSizes.tablet}) {
-    display: none;
-  }
-`;
+export const FooterBr = styled("br", {
+  "@tablet": {
+    display: "none",
+  },
+});
 
-export const FooterText = styled.p`
-  font-size: 14px;
-  line-height: 2;
-`;
+export const FooterText = styled("p", {
+  fontSize: "14px",
+  lineHeight: "2",
+
+  textAlign: "center",
+  "@tablet": {
+    textAlign: "left",
+  },
+});

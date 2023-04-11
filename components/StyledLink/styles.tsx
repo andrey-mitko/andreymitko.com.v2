@@ -7,7 +7,7 @@ export const Link = styled("a", {
   justifyContent: "space-between",
   fontSize: "16px",
 
-  "@media (hover: hover)": {
+  "@hover": {
     "@laptop": {
       color: "$black70",
       transition: "all 0.2s ease-in-out",

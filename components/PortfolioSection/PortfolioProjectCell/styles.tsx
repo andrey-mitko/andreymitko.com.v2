@@ -9,7 +9,7 @@ export const CellWrapper = styled("div", {
     height: "100%",
   },
 
-  "@media (hover: hover)": {
+  "@hover": {
     "@laptop": {
       "&:hover": {
         "& .image-wrapper": {
