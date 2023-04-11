@@ -1,20 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { gsap } from "gsap";
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
-import { gsap } from "gsap";
-import Navbar from "../components/Elements/Navbar";
-import HeroSection from "../components/Sections/HeroSection";
-import AboutSection from "../components/Sections/AboutSection";
-import ExperienceSection from "../components/Sections/ExperienceSection";
-import PortfolioSection from "../components/Sections/PortfolioSection";
-import FooterSection from "../components/Sections/FooterSection";
+
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import PortfolioSection from "@/components/PortfolioSection";
+import FooterSection from "@/components/FooterSection";
 
 const Home: NextPage = () => {
   const [hasMounted, setHasMounted] = useState(false);
 
   const navBarHeight = "-87px";
-
   const [heroSectionRef, heroSectionInView] = useInView({
     rootMargin: navBarHeight,
   });
@@ -37,19 +37,15 @@ const Home: NextPage = () => {
     setHasMounted(true);
   }, []);
 
+  // This is the animation that runs when the page loads
   useEffect(() => {
     if (hasMounted) {
       let ctx = gsap.context(() => {
         var tl = gsap.timeline();
-        tl.set("#main-content", {
+        tl.set("#main-content, .footer", {
           opacity: 0,
           visibility: "hidden",
         });
-        tl.set(".footer", {
-          opacity: 0,
-          visibility: "hidden",
-        });
-
         tl.to(["#main-content", ".footer"], {
           delay: 1,
           duration: 1,

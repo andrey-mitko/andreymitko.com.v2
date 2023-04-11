@@ -1,19 +1,21 @@
 import type { AppProps } from "next/app";
-import { GlobalStyle } from "../styles/styles";
-import "normalize.css/normalize.css";
-import "remixicon/fonts/remixicon.css";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Script from "next/script";
 import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import "remixicon/fonts/remixicon.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { globalStyles } from "../stitches.config";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     document.documentElement.style.visibility = "visible";
   }, []);
+
+  globalStyles();
+
   return (
     <>
       <Script
@@ -34,11 +36,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             });
           `}
       </Script>
-      <GlobalStyle />
       <Component {...pageProps} />
       <Analytics />
     </>
   );
 }
 
-export default MyApp;
+export default App;
