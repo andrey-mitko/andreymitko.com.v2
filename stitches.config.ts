@@ -100,7 +100,6 @@ const resetCss = {
       textDecoration: "none",
       verticalAlign: "baseline",
       zIndex: 1,
-      color: "unset",
     },
 
   /* Miscellaneous resets */
