@@ -7,7 +7,6 @@ import {
   ContentWrapper,
   TitleText,
   ImageWrapper,
-  // SubtitleText,
   LinkWrapper,
 } from "./styles";
 
@@ -28,6 +27,7 @@ const PortfolioProjectCell = (props: Props) => {
     >
       <ImageWrapper className="image-wrapper">
         <Image
+          draggable={false}
           placeholder="blur"
           src={props.project.image}
           alt={props.project.title}
@@ -35,21 +35,12 @@ const PortfolioProjectCell = (props: Props) => {
           height={100}
           className="image"
           sizes="100vw"
-          style={
-            {
-              // width: "100%",
-              // height: "auto",
-              // overflow: "hidden",
-              // borderRadius: "8px",
-            }
-          }
         />
       </ImageWrapper>
 
       <ContentWrapper>
         <TitleText>{props.project.title}</TitleText>
-        {/* Might be added Later if neccesary */}
-        {/* <SubtitleText>{props.project.subtitle}</SubtitleText> */}
+
         <LinkWrapper>
           <StyledLink
             onClick={(e) => {

@@ -13,6 +13,7 @@ import {
 const AboutSection = () => {
   const comp = useRef<HTMLDivElement | null>(null);
 
+  // This is the animation that runs when the section loads
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.set(".animate-appear", { opacity: 0, y: 48 });

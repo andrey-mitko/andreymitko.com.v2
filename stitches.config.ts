@@ -139,7 +139,7 @@ export const globalStyles = globalCss({
   },
 });
 
-//MARK: Components that are reused throughout the app
+//MARK: ComponentStyles that are reused throughout the app
 export const Section = styled("div", {
   padding: "0 24px 0 24px",
   "@tablet": {

@@ -61,14 +61,6 @@ export const TitleText = styled("h4", {
   fontSize: "20px",
 });
 
-export const SubtitleText = styled("p", {
-  marginTop: "16px",
-  lineHeight: "1.2",
-  fontWeight: "$medium",
-  color: "$black100",
-  fontSize: "16px",
-});
-
 export const LinkWrapper = styled("div", {
   marginTop: "20px",
   "& > *": {

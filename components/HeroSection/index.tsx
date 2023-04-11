@@ -5,6 +5,7 @@ import { HeroWrapper, HeroText, ColouredText, StyledArrowUp } from "./styles";
 const HeroSection = () => {
   const comp = useRef<HTMLDivElement | null>(null); // create a ref for the root level element (for scoping)
 
+  // This is the animation that runs when the section loads
   useEffect(() => {
     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
     let ctx = gsap.context(() => {

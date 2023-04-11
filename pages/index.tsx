@@ -37,19 +37,15 @@ const Home: NextPage = () => {
     setHasMounted(true);
   }, []);
 
+  // This is the animation that runs when the page loads
   useEffect(() => {
     if (hasMounted) {
       let ctx = gsap.context(() => {
         var tl = gsap.timeline();
-        tl.set("#main-content", {
+        tl.set("#main-content, .footer", {
           opacity: 0,
           visibility: "hidden",
         });
-        tl.set(".footer", {
-          opacity: 0,
-          visibility: "hidden",
-        });
-
         tl.to(["#main-content", ".footer"], {
           delay: 1,
           duration: 1,

@@ -44,6 +44,7 @@ const Navbar = (props: Props) => {
 
   const comp = useRef<HTMLDivElement | null>(null);
 
+  // This is the animation that runs when the navbar loads
   useEffect(() => {
     let ctx = gsap.context(() => {
       var tl = gsap.timeline();
