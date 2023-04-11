@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { Slant as Hamburger } from "hamburger-react";
-import NavItem from "@/types/NavItem";
+import navigationLinks from "@/data/navigationLinks";
+
 import {
   NavWrapper,
   Title,
@@ -21,26 +22,7 @@ type Props = {
 
 const Navbar = (props: Props) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // MARK: - Navigation Data
-  const navigationItems: NavItem[] = [
-    {
-      title: "About",
-      url: "/#about",
-    },
-    {
-      title: "Experience",
-      url: "/#experience",
-    },
-    {
-      title: "Portfolio",
-      url: "/#portfolio",
-    },
-    {
-      title: "Contact",
-      url: "/#contact",
-    },
-  ];
+  const [animationComplete, setAnimationComplete] = useState(false);
 
   const comp = useRef<HTMLDivElement | null>(null);
 
@@ -79,6 +61,11 @@ const Navbar = (props: Props) => {
         opacity: 1,
         ease: "power3.out",
       });
+      tl.add(() => {
+        setAnimationComplete(true);
+        // This is a hack to fix a bug where the navBar would not change color
+        window.scrollBy(0, 0.0001);
+      });
     }, comp);
 
     return () => ctx.revert();
@@ -89,10 +76,12 @@ const Navbar = (props: Props) => {
       <NavWrapper
         ref={comp}
         css={{
-          backgroundColor: mobileMenuOpen
-            ? "$lightpurple"
-            : props.bgColor
-            ? `$${props.bgColor}`
+          backgroundColor: animationComplete
+            ? mobileMenuOpen
+              ? "$lightpurple"
+              : props.bgColor
+              ? `$${props.bgColor}`
+              : "white"
             : "white",
         }}
       >
@@ -120,7 +109,7 @@ const Navbar = (props: Props) => {
                 }
               />
             </HamburgerWrapper>
-            {navigationItems.map((item, index) => (
+            {navigationLinks.map((item, index) => (
               <StandardMenuLink
                 onClick={() => setMobileMenuOpen(false)}
                 key={index}
@@ -138,7 +127,7 @@ const Navbar = (props: Props) => {
         mobileMenuOpen={mobileMenuOpen}
       >
         <MobileMenuLinksWrapper>
-          {navigationItems.map((item, index) => (
+          {navigationLinks.map((item, index) => (
             <MobileMenuLink
               onClick={() => setMobileMenuOpen(false)}
               key={index}

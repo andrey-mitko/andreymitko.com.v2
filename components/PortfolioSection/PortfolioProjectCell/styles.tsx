@@ -32,7 +32,6 @@ export const ImageWrapper = styled("div", {
   borderRadius: "16px",
   position: "relative",
   aspectRatio: "1/1",
-  backgroundColor: "$orange",
   overflow: "hidden",
 
   "& img": {
