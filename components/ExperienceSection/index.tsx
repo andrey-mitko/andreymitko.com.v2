@@ -57,7 +57,7 @@ const ExperienceSection = () => {
           })}
 
           <MoreInfoWrapper>
-            <OpenToWorkText>* Open for Work! </OpenToWorkText>
+            <OpenToWorkText>* Currently open for work</OpenToWorkText>
             <StyledLink href="/resume.pdf" title="EXPLORE FULL CV" />
           </MoreInfoWrapper>
         </ExperiencesList>

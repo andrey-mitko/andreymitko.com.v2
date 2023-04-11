@@ -35,10 +35,14 @@ const PortfolioProjectCell = (props: Props) => {
           height={100}
           className="image"
           sizes="100vw"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
+          style={
+            {
+              // width: "100%",
+              // height: "auto",
+              // overflow: "hidden",
+              // borderRadius: "8px",
+            }
+          }
         />
       </ImageWrapper>
 

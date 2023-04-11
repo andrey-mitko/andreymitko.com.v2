@@ -34,14 +34,7 @@ const PortfolioSection = () => {
   return (
     <PortfolioWrapper ref={comp}>
       <div className="container">
-        <StyledSectionTitle
-          className="section-title animate-appear"
-          css={{
-            "&::after": {
-              backgroundColor: "var(--colors-green)",
-            },
-          }}
-        >
+        <StyledSectionTitle className="section-title animate-appear">
           Portfolio
         </StyledSectionTitle>
         <ContentWrapper>

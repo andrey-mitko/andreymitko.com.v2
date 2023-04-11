@@ -1,59 +1,48 @@
-import styled from "styled-components";
-import { Section } from "@/stitches.config";
-import ScreenSizes from "@/utils/mediaVariables";
-import { SectionTitle } from "@/stitches.config";
+import { styled, Section, SectionTitle } from "@/stitches.config";
 
-export const PortfolioWrapper = styled(Section)`
-  padding-top: 112px;
-  padding-bottom: 60px;
-  background-color: var(--color-lightgreen);
+export const PortfolioWrapper = styled(Section, {
+  paddingTop: "112px",
+  paddingBottom: "60px",
+  backgroundColor: "$lightgreen",
 
-  @media (min-width: ${ScreenSizes.desktop}) {
-    padding-top: 140px;
-    padding-bottom: 140px;
-  }
-`;
+  "@desktop": {
+    paddingY: "140px",
+  },
+});
 
-export const StyledSectionTitle = styled(SectionTitle)`
-  @media (min-width: ${ScreenSizes.tablet}) {
-    width: 100%;
-    text-align: center;
+export const StyledSectionTitle = styled(SectionTitle, {
+  "&::after": {
+    backgroundColor: "$green",
+  },
 
-    ::after {
-      content: "";
-      display: block;
-      margin: 0 auto;
-      width: 48px;
-      height: 7px;
-      border-radius: 3.5px;
-      // ts-ignore
-      background-color: ${(props: any) =>
-        props.color ? `var(--color-${props.color})` : "var(--color-blue)"};
-      margin-top: 16px;
-    }
-  }
-`;
+  "@tablet": {
+    width: "100%",
+    textAlign: "center",
 
-export const ContentWrapper = styled.div`
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: baseline;
-  row-gap: 64px;
+    "&::after": {
+      marginX: "auto",
+      display: "block",
+    },
+  },
+});
 
-  @media (min-width: ${ScreenSizes.tablet}) {
-    width: 100%;
-    margin-top: 56px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 76px;
-    row-gap: 0px;
-  }
+export const ContentWrapper = styled("div", {
+  marginTop: "48px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  alignItems: "baseline",
+  rowGap: "64px",
 
-  @media (min-width: ${ScreenSizes.desktop}) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 76px;
-    row-gap: 0px;
-  }
-`;
+  "@tablet": {
+    width: "100%",
+    marginTop: "56px",
+    display: "grid",
+    gridTemplateColumns: "repeat(2, 1fr)",
+    gap: "76px",
+  },
+
+  "@desktop": {
+    gridTemplateColumns: "repeat(3, 1fr)",
+  },
+});
