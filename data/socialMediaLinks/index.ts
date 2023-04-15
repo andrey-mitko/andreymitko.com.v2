@@ -8,22 +8,22 @@ export default [
   },
   {
     iconClass: "ri-github-line",
-    url: "https://github.com/andrey-mitko",
+    url: "https://www.github.com/andrey-mitko/",
     color: "pink",
   },
   {
     iconClass: "ri-product-hunt-line",
-    url: "https://www.producthunt.com/@andrey_mitko",
+    url: "https://www.producthunt.com/@andrey_mitko/",
     color: "green",
   },
   {
     iconClass: "ri-twitter-line",
-    url: "https://twitter.com/andrey_mitko",
+    url: "https://twitter.com/andrey_mitko/",
     color: "orange",
   },
   {
     iconClass: "ri-medium-line",
-    url: "https://medium.com/@mitk8",
+    url: "https://www.medium.com/@mitk8/",
     color: "purple",
   },
 ] as SocialLink[];
