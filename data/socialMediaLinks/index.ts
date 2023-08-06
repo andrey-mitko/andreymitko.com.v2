@@ -17,7 +17,7 @@ export default [
     color: "green",
   },
   {
-    iconClass: "ri-twitter-line",
+    iconClass: "ri-twitter-x-line",
     url: "https://twitter.com/andrey_mitko/",
     color: "orange",
   },
