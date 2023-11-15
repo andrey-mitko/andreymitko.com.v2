@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
-import experiences from "@/data/experiences";
+import experiences, { openForWork } from "@/data/experiences";
 import StyledLink from "@/components/StyledLink";
 import ExperienceCell from "./ExperienceCell";
 import { SectionTitle } from "@/stitches.config";
@@ -64,9 +64,11 @@ const ExperienceSection = () => {
           })}
 
           <MoreInfoWrapper>
-            <OpenToWorkText>
-              * {mobile ? "Open for work" : "Currently open for work"}
-            </OpenToWorkText>
+            {openForWork && (
+              <OpenToWorkText>
+                * {mobile ? "Open for work" : "Currently open for work"}
+              </OpenToWorkText>
+            )}
             <StyledLink href="/resume.pdf" title="EXPLORE FULL CV" />
           </MoreInfoWrapper>
         </ExperiencesList>

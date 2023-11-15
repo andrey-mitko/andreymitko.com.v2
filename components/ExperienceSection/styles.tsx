@@ -27,7 +27,7 @@ export const ExperiencesList = styled("div", {
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  alignItems: "baseline",
+  alignItems: "flex-end",
   rowGap: "40px",
 
   "@tablet": {
@@ -48,6 +48,9 @@ export const MoreInfoWrapper = styled("div", {
   justifyContent: "space-between",
   alignItems: "center",
   paddingTop: "8px",
+  "& a:only-child": {
+    marginLeft: "auto",
+  },
 });
 
 export const OpenToWorkText = styled("h5", {

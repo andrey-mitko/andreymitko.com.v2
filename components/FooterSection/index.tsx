@@ -8,13 +8,11 @@ import {
   SocialMediaWrapper,
   SocialMediaIcon,
   StyledFooter,
-  FooterText,
-  FooterBr,
 } from "./styles";
 
 const FooterSection = () => {
   const [linkHovered, setLinkHovered] = useState(false);
-
+  const today = new Date();
   return (
     <FooterWrapper>
       <div className="container">
@@ -40,10 +38,8 @@ const FooterSection = () => {
           ))}
         </SocialMediaWrapper>
         <StyledFooter>
-          <FooterText>
-            Made with lots of coffee.
-            <FooterBr /> Andrey Mitko © 2023.
-          </FooterText>
+          <span>© {today.getFullYear()} Andrey Mitko.</span>
+          <span>All Rights Reserved.</span>
         </StyledFooter>
       </div>
     </FooterWrapper>
