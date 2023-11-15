@@ -110,23 +110,23 @@ export const SocialMediaIcon = styled("i", {
 
 export const StyledFooter = styled("footer", {
   gridArea: "footer",
+  display: "flex",
   width: "100%",
   marginTop: "60px",
-  color: "$black70",
-});
 
-export const FooterBr = styled("br", {
+  justifyContent: "space-between",
+  alignItems: "center",
+  flexDirection: "column",
+  gap: "16px",
+
   "@tablet": {
-    display: "none",
+    flexDirection: "row",
+    justifyContent: "start",
+    gap: "4px",
   },
-});
 
-export const FooterText = styled("p", {
-  fontSize: "14px",
-  lineHeight: "2",
-
-  textAlign: "center",
-  "@tablet": {
-    textAlign: "left",
+  "& > *": {
+    fontSize: "14px",
+    color: "$black70",
   },
 });

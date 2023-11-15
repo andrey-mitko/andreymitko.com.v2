@@ -55,12 +55,13 @@ const AboutSection = () => {
             </FeatureText>
           </FeaturesWrapper>
           <AboutText className="animate-appear">
-            Self-taught software developer with a strong knowledge of
-            TypeScript, JavaScript, Python and Swift.
+            Self-taught software engineer with a strong knowledge of
+            TypeScript, JavaScript, Swift and Python.
             <br />
-            <br /> An International Baccalaureate graduate from Leysin American
-            School in Switzerland, I am currently pursuing a Bachelor of
-            Business Administration in London, UK.
+            <br />
+            An International Baccalaureate graduate from Leysin American School
+            in Switzerland, with a Bachelor of Business Administration from Hult
+            International Business School.
             <br />
             <br />I am fluent in English and Russian and have experience working
             and studying in an international environment.

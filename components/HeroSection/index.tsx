@@ -31,7 +31,7 @@ const HeroSection = () => {
           I am a <ColouredText type="blue">cr</ColouredText>
           <ColouredText type="pink">ea</ColouredText>
           <ColouredText type="green">ti</ColouredText>
-          <ColouredText type="orange">ve</ColouredText> software developer
+          <ColouredText type="orange">ve</ColouredText> software engineer
           currently based in London, UK
         </HeroText>
       </HeroWrapper>
