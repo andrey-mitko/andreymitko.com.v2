@@ -79,31 +79,6 @@ const fadeMoveUpAnimation = keyframes({
   "100%": { opacity: 1, transform: "translateY(0)" },
 });
 
-export const ThankYouText = styled("p", {
-  position: "fixed",
-  bottom: "56px",
-  fontSize: "16px",
-  textAlign: "center",
-  width: "100%",
-  color: "$purple",
-  opacity: 1,
-  animationDuration: "500ms",
-  animationDelay: "500ms",
-  animationFillMode: "both",
-  animationTimingFunction: "ease-in-out",
-
-  variants: {
-    mobileMenuOpen: {
-      true: {
-        animationName: `${fadeMoveUpAnimation}`,
-      },
-      false: {
-        animationName: "unset",
-      },
-    },
-  },
-});
-
 const fadeMoveDownAnimation = keyframes({
   "0%": { opacity: 0, transform: "translateY(-16px)" },
   "100%": { opacity: 1, transform: "translateY(0)" },

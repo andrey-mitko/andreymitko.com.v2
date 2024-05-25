@@ -9,7 +9,6 @@ import {
   MobileMenu,
   MobileMenuLinksWrapper,
   MobileMenuLink,
-  ThankYouText,
   HamburgerWrapper,
   StandardMenuLink,
   NavigationWrapper,
@@ -140,12 +139,6 @@ const Navbar = (props: Props) => {
             </MobileMenuLink>
           ))}
         </MobileMenuLinksWrapper>
-
-        <div style={{ opacity: 0.7 }}>
-          <ThankYouText mobileMenuOpen={mobileMenuOpen}>
-            Thank you for visiting my website!
-          </ThankYouText>
-        </div>
       </MobileMenu>
     </>
   );
