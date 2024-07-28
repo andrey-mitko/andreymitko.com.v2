@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import experiences, { openForWork } from "@/data/experiences";
-import StyledLink from "@/components/StyledLink";
 import ExperienceCell from "./ExperienceCell";
 import { SectionTitle } from "@/stitches.config";
 import {
@@ -69,7 +68,6 @@ const ExperienceSection = () => {
                 * {mobile ? "Open for work" : "Currently open for work"}
               </OpenToWorkText>
             )}
-            <StyledLink href="/resume.pdf" title="EXPLORE FULL CV" />
           </MoreInfoWrapper>
         </ExperiencesList>
       </ContentContainer>

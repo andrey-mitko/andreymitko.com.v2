@@ -51,12 +51,12 @@ const AboutSection = () => {
               Business Oriented <br /> Product Engineer
             </FeatureText>
             <FeatureText>
-              2+ years <br /> of experience
+              3+ years <br /> of experience
             </FeatureText>
           </FeaturesWrapper>
           <AboutText className="animate-appear">
-            Self-taught software engineer with a strong knowledge of
-            TypeScript, JavaScript, Swift and Python.
+            Self-taught software engineer with a strong knowledge of TypeScript,
+            JavaScript, and Swift.
             <br />
             <br />
             An International Baccalaureate graduate from Leysin American School

@@ -1,5 +1,6 @@
 import Project from "@/types/Project";
 
+import CompoundInterestImage from "@/public/portfolio/savingslol.png";
 import JoePeshallImage from "@/public/portfolio/joepeshall.png";
 import SpringImage from "@/public/portfolio/byspring.png";
 import DriftImage from "@/public/portfolio/drift.png";
@@ -7,6 +8,12 @@ import TabagerImage from "@/public/portfolio/tabager.png";
 import ZonloImage from "@/public/portfolio/zonlo.png";
 
 export default [
+  {
+    title: "Compound Interest Calculator",
+    subtitle: "Product Design, Web Development",
+    image: CompoundInterestImage,
+    url: "https://www.savings.lol",
+  },
   {
     title: "Joe’s Portfolio Website",
     subtitle: "Web Development",
