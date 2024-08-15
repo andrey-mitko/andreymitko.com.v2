@@ -1,7 +1,6 @@
 import Project from "@/types/Project";
 
 import CompoundInterestImage from "@/public/portfolio/savingslol.png";
-import JoePeshallImage from "@/public/portfolio/joepeshall.png";
 import SpringImage from "@/public/portfolio/byspring.png";
 import DriftImage from "@/public/portfolio/drift.png";
 import TabagerImage from "@/public/portfolio/tabager.png";
@@ -13,12 +12,6 @@ export default [
     subtitle: "Product Design, Web Development",
     image: CompoundInterestImage,
     url: "https://www.savings.lol",
-  },
-  {
-    title: "Joe’s Portfolio Website",
-    subtitle: "Web Development",
-    image: JoePeshallImage,
-    url: "https://www.joepeshall.co.uk",
   },
   {
     title: "Spring — Full Service Studio",
